@@ -9,9 +9,11 @@ const SHIP_LENGTHS = {
 const Ship = (type) => {
   // length
   const length = SHIP_LENGTHS[type];
-  // hit(num)
+  // hit(i)
+  const hits = new Array(length).fill(null);
+  const hit = (i) => (hits[i] = 'hit');
   // isSunk
-  return { length };
+  return { length, hits, hit };
 };
 
 export default Ship;
