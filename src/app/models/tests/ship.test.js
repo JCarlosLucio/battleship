@@ -3,10 +3,13 @@
 import Ship from '../factories/ship';
 
 describe('Ship Factory', () => {
-  test('length', () => {
-    const ship = Ship('battleship');
-    expect(ship.length).toBe(4);
+  describe('length', () => {
+    test('length', () => {
+      const ship = Ship('battleship');
+      expect(ship.length).toBe(4);
+    });
   });
+
   describe('hit function', () => {
     const ship = Ship('submarine');
     test('no hits', () => {
@@ -17,6 +20,7 @@ describe('Ship Factory', () => {
       expect(ship.hits).toStrictEqual([null, null, 'hit']);
     });
   });
+
   describe('isSunk function', () => {
     const ship = Ship('destroyer');
     test('not sunk', () => {
