@@ -8,12 +8,11 @@ describe('Ship Factory', () => {
     expect(ship.length).toBe(4);
   });
   describe('hit function', () => {
+    const ship = Ship('submarine');
     test('no hits', () => {
-      const ship = Ship('cruiser');
       expect(ship.hits).toStrictEqual([null, null, null]);
     });
     test('one hit', () => {
-      const ship = Ship('submarine');
       ship.hit(2);
       expect(ship.hits).toStrictEqual([null, null, 'hit']);
     });
