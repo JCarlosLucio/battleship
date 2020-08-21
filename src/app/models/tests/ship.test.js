@@ -17,4 +17,10 @@ describe('Ship Factory', () => {
       expect(ship.hits).toStrictEqual([null, null, 'hit']);
     });
   });
+  describe('isSunk function', () => {
+    const ship = Ship('destroyer');
+    test('not sunk', () => {
+      expect(ship.isSunk()).toBe(false);
+    });
+  });
 });
