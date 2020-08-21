@@ -13,7 +13,8 @@ const Ship = (type) => {
   const hits = new Array(length).fill(null);
   const hit = (i) => (hits[i] = 'hit');
   // isSunk
-  return { length, hits, hit };
+  const isSunk = () => hits.every((h) => h === 'hit');
+  return { length, hits, hit, isSunk };
 };
 
 export default Ship;
