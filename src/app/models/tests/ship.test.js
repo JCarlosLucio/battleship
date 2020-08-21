@@ -22,8 +22,11 @@ describe('Ship Factory', () => {
     test('not sunk', () => {
       expect(ship.isSunk()).toBe(false);
     });
-    test('sunk', () => {
+    test('hit but not sunk', () => {
       ship.hit(0);
+      expect(ship.isSunk()).toBe(false);
+    });
+    test('sunk', () => {
       ship.hit(1);
       expect(ship.isSunk()).toBe(true);
     });
