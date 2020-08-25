@@ -7,14 +7,16 @@ const SHIP_LENGTHS = {
 };
 
 const Ship = (type) => {
+  // id
+  const id = type;
   // length
   const length = SHIP_LENGTHS[type];
   // hit(i)
-  const hits = new Array(length).fill(null);
+  const hits = Array(length).fill(null);
   const hit = (i) => (hits[i] = 'hit');
   // isSunk
   const isSunk = () => hits.every((h) => h === 'hit');
-  return { length, hits, hit, isSunk };
+  return { id, length, hits, hit, isSunk };
 };
 
 export default Ship;
