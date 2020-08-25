@@ -14,5 +14,15 @@ describe('Gameboard', () => {
       const expected = false;
       expect(actual).toBe(expected);
     });
+    test('board row', () => {
+      const actual = gameboard.getBoard().length;
+      const expected = 10;
+      expect(actual).toBe(expected);
+    });
+    test('board column', () => {
+      const actual = gameboard.getBoard()[0].length;
+      const expected = 10;
+      expect(actual).toBe(expected);
+    });
   });
 });
