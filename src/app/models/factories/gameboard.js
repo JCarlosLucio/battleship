@@ -3,7 +3,13 @@ const Gameboard = () => {
   const board = Array(10).fill(null).map(() => Array(10).fill(null));
 
   const getBoard = () => board;
-  return { getBoard };
+
+  // place ship at coords (y, x)
+  const placeShip = (ship, x, y) => {
+    board[y][x] = ship;
+  };
+
+  return { getBoard, placeShip };
 };
 
 export default Gameboard;
