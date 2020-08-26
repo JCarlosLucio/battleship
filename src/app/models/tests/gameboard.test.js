@@ -46,4 +46,23 @@ describe('Gameboard', () => {
       expect(actual).toEqual({ ship, index: 2 });
     });
   });
+  describe('place vertical ship', () => {
+    const gameboard = Gameboard();
+    const ship = Ship('submarine');
+    ship.changeDirection();
+    gameboard.placeShip(ship, 3, 2);
+
+    test('placed ship at starter coord w/index: 0', () => {
+      const actual = gameboard.getBoard()[3][2];
+      expect(actual).toEqual({ ship, index: 0 });
+    });
+    test('placed ship at coord w/index: 1', () => {
+      const actual = gameboard.getBoard()[4][2];
+      expect(actual).toEqual({ ship, index: 1 });
+    });
+    test('placed ship at final coord w/index: 2', () => {
+      const actual = gameboard.getBoard()[5][2];
+      expect(actual).toEqual({ ship, index: 2 });
+    });
+  });
 });
