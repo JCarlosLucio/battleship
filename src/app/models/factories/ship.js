@@ -13,6 +13,11 @@ const Ship = (type) => {
   let direction = 'horizontal';
 
   const getDirection = () => direction;
+  const changeDirection = () => {
+    direction === 'horizontal'
+      ? (direction = 'vertical')
+      : (direction = 'horizontal');
+  };
 
   // hit(i)
   const hits = Array(length).fill(null);
@@ -22,7 +27,7 @@ const Ship = (type) => {
   // isSunk
   const isSunk = () => hits.every((h) => h === 'hit');
 
-  return { id, length, hit, getHits, isSunk, getDirection };
+  return { id, length, hit, getHits, isSunk, getDirection, changeDirection };
 };
 
 export default Ship;
