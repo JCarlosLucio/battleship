@@ -6,17 +6,17 @@ const Gameboard = () => {
 
   // place ship at coords (y, x)
   const placeShip = (ship, y0, x0) => {
-    const length = ship.length;
     const direction = ship.getDirection();
     // todo: check if invalid (out of bounds/collision)
-    if (direction === 'horizontal') {
-      for (let i = 0; i < length; i++) {
-        board[y0][x0 + i] = { ship, index: i };
+    for (let i = 0; i < ship.length; i++) {
+      // default: horizontal
+      let x = x0 + i;
+      let y = y0;
+      if (direction === 'vertical') {
+        x = x0;
+        y = y0 + i;
       }
-    } else {
-      for (let y = 0; y < length; y++) {
-        board[y0 + i][x0] = { ship, index: y };
-      }
+      board[y][x] = { ship, index: i };
     }
   };
 
