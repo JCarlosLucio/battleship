@@ -3,10 +3,13 @@
 import Ship from '../factories/ship';
 
 describe('Ship Factory', () => {
-  describe('length', () => {
+  describe('properties', () => {
+    const ship = Ship('battleship');
     test('length', () => {
-      const ship = Ship('battleship');
       expect(ship.length).toBe(4);
+    });
+    test('direction', () => {
+      expect(ship.getDirection()).toBe('horizontal');
     });
   });
 
