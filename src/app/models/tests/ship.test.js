@@ -13,11 +13,11 @@ describe('Ship Factory', () => {
   describe('hit function', () => {
     const ship = Ship('submarine');
     test('no hits', () => {
-      expect(ship.hits).toStrictEqual([null, null, null]);
+      expect(ship.getHits()).toEqual([null, null, null]);
     });
     test('one hit', () => {
       ship.hit(2);
-      expect(ship.hits).toStrictEqual([null, null, 'hit']);
+      expect(ship.getHits()).toEqual([null, null, 'hit']);
     });
   });
 
