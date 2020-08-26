@@ -31,11 +31,19 @@ describe('Gameboard', () => {
   describe('place ship', () => {
     const gameboard = Gameboard();
     const ship = Ship('cruiser');
+    gameboard.placeShip(ship, 3, 2);
 
-    test('places ship at coord', () => {
-      gameboard.placeShip(ship, 3, 2);
+    test('placed ship at starter coord w/index: 0', () => {
       const actual = gameboard.getBoard()[3][2];
-      expect(actual).toEqual(ship);
+      expect(actual).toEqual({ ship, index: 0 });
+    });
+    test('placed ship at coord w/index: 1', () => {
+      const actual = gameboard.getBoard()[3][3];
+      expect(actual).toEqual({ ship, index: 1 });
+    });
+    test('placed ship at final coord w/index: 2', () => {
+      const actual = gameboard.getBoard()[3][4];
+      expect(actual).toEqual({ ship, index: 2 });
     });
   });
 });
