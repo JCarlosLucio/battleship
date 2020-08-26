@@ -5,7 +5,7 @@ const Gameboard = () => {
   const getBoard = () => board;
 
   // place ship at coords (y, x)
-  const placeShip = (ship, x, y) => {
+  const placeShip = (ship, y, x) => {
     board[y][x] = ship;
   };
 
