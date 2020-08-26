@@ -7,11 +7,10 @@ const SHIP_LENGTHS = {
 };
 
 const Ship = (type) => {
-  // id
+  // properties
   const id = type;
-
-  // length
   const length = SHIP_LENGTHS[type];
+  let direction = 'horizontal';
 
   // hit(i)
   const hits = Array(length).fill(null);
@@ -21,7 +20,7 @@ const Ship = (type) => {
   // isSunk
   const isSunk = () => hits.every((h) => h === 'hit');
 
-  return { id, length, hit, getHits, isSunk };
+  return { id, length, hit, getHits, isSunk, getDirection, changeDirection };
 };
 
 export default Ship;
