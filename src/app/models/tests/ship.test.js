@@ -5,6 +5,9 @@ import Ship from '../factories/ship';
 describe('Ship Factory', () => {
   describe('properties', () => {
     const ship = Ship('battleship');
+    test('id', () => {
+      expect(ship.id).toBe('battleship');
+    });
     test('length', () => {
       expect(ship.length).toBe(4);
     });
