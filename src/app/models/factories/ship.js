@@ -9,14 +9,19 @@ const SHIP_LENGTHS = {
 const Ship = (type) => {
   // id
   const id = type;
+
   // length
   const length = SHIP_LENGTHS[type];
+
   // hit(i)
   const hits = Array(length).fill(null);
   const hit = (i) => (hits[i] = 'hit');
+  const getHits = () => hits;
+
   // isSunk
   const isSunk = () => hits.every((h) => h === 'hit');
-  return { id, length, hits, hit, isSunk };
+
+  return { id, length, hit, getHits, isSunk };
 };
 
 export default Ship;
