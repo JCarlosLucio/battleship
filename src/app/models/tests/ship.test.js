@@ -14,6 +14,10 @@ describe('Ship Factory', () => {
     test('direction', () => {
       expect(ship.getDirection()).toBe('horizontal');
     });
+    test('change direction', () => {
+      ship.changeDirection();
+      expect(ship.getDirection()).toBe('vertical');
+    });
   });
 
   describe('hit function', () => {
