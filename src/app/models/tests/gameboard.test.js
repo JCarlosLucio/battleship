@@ -28,7 +28,7 @@ describe('Gameboard', () => {
     });
   });
 
-  describe('place ship', () => {
+  describe('place horizontal ship', () => {
     const gameboard = Gameboard();
     const ship = Ship('cruiser');
     gameboard.placeShip(ship, 3, 2);
