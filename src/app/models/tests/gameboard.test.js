@@ -65,4 +65,15 @@ describe('Gameboard', () => {
       expect(actual).toEqual({ ship, index: 2 });
     });
   });
+
+  describe('place invalid ship', () => {
+    const gameboard = Gameboard();
+    const ship = Ship('carrier');
+
+    test('out-of-bounds ship is NOT placed', () => {
+      gameboard.placeShip(ship, 7, 7);
+      const actual = gameboard.getBoard()[7][7];
+      expect(actual).toEqual(null);
+    });
+  });
 });
