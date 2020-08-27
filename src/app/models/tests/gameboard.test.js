@@ -90,4 +90,19 @@ describe('Gameboard', () => {
       expect(actual).toEqual(null);
     });
   });
+
+  describe('receive attack', () => {
+    const gameboard = Gameboard();
+    const carrier = Ship('carrier');
+    const battleship = Ship('battleship');
+    gameboard.placeShip(carrier, 2, 0); // [2,0],[2,1],[2,2],[2,3],[2,4]
+    battleship.changeDirection();
+    gameboard.placeShip(battleship, 3, 2); // [3,2],[4,2],[5,2],[6,2]
+    gameboard.receiveAttack(0, 0);
+
+    test('miss', () => {
+      const actual = gameboard.getBoard()[0][0];
+      expect(actual).toEqual('miss');
+    });
+  });
 });
