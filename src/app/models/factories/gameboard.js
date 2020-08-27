@@ -20,6 +20,21 @@ const Gameboard = () => {
     }
   };
 
+  const checkValid = (length, direction, y0, x0) => {
+    const cells = [];
+    for (let i = 0; i < length; i++) {
+      // default: horizontal
+      let x = x0 + i;
+      let y = y0;
+      if (direction === 'vertical') {
+        x = x0;
+        y = y0 + i;
+      }
+      cells.push(board[y][x]);
+    }
+    return cells.every((cell) => cell === null);
+  };
+
   return { getBoard, placeShip };
 };
 
