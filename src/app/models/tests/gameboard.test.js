@@ -104,5 +104,15 @@ describe('Gameboard', () => {
       const actual = gameboard.getBoard()[0][0];
       expect(actual).toEqual('miss');
     });
+    test('attack a carrier at index 0', () => {
+      gameboard.receiveAttack(2, 0);
+      const actual = carrier.getHits();
+      expect(actual).toEqual(['hit', null, null, null, null]);
+    });
+    test('attack a carrier at index 3', () => {
+      gameboard.receiveAttack(2, 3);
+      const actual = carrier.getHits();
+      expect(actual).toEqual(['hit', null, null, 'hit', null]);
+    });
   });
 });
