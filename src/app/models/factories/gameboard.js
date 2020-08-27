@@ -7,16 +7,19 @@ const Gameboard = () => {
   // place ship at coords (y, x)
   const placeShip = (ship, y0, x0) => {
     const direction = ship.getDirection();
-    // todo: check if invalid (out of bounds/collision)
-    for (let i = 0; i < ship.length; i++) {
-      // default: horizontal
-      let x = x0 + i;
-      let y = y0;
-      if (direction === 'vertical') {
-        x = x0;
-        y = y0 + i;
+    // checks if out-of-bounds/collision
+    if (checkValid(ship.length, direction, y0, x0)) {
+      for (let i = 0; i < ship.length; i++) {
+        // default: horizontal
+        let x = x0 + i;
+        let y = y0;
+        if (direction === 'vertical') {
+          x = x0;
+          y = y0 + i;
+        }
+        // places ship w/index
+        board[y][x] = { ship, index: i };
       }
-      board[y][x] = { ship, index: i };
     }
   };
 
