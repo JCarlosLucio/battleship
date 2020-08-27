@@ -38,7 +38,19 @@ const Gameboard = () => {
     return cells.every((cell) => cell === null);
   };
 
-  return { getBoard, placeShip };
+  const receiveAttack = (y, x) => {
+    // determines whether or not the attack hit a ship
+    if (board[y][x] === null) {
+      // records missed shot
+      board[y][x] = 'miss';
+    } else if (board[y][x].ship) {
+      // calls ‘hit’ function of the correct ship
+      board[y][x].ship.hit(board[y][x].index);
+    }
+    // todo: check if cell has already been attacked/missed
+  };
+
+  return { getBoard, placeShip, receiveAttack };
 };
 
 export default Gameboard;
