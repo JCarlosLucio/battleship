@@ -46,8 +46,11 @@ const Gameboard = () => {
     } else if (board[y][x].ship) {
       // calls ‘hit’ function of the correct ship
       board[y][x].ship.hit(board[y][x].index);
+      // Records attacked cell wit 'hit' (prevents future .ship.hit())
+      // if needed could also be `${ship.id}-hit-${index}`
+      // or maybe add 'hit' to cell object { ship, index: i, hit: true }
+      board[y][x] = 'hit';
     }
-    // todo: check if cell has already been attacked/missed
   };
 
   return { getBoard, placeShip, receiveAttack };
