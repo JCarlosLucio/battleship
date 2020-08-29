@@ -123,4 +123,18 @@ describe('Gameboard', () => {
       expect(actual).toEqual('hit');
     });
   });
+
+  describe('are ships sunk', () => {
+    const gameboard = Gameboard();
+    const submarine = Ship('submarine');
+    const destroyer = Ship('destroyer');
+    gameboard.placeShip(submarine, 2, 0); // [2,0],[2,1],[2,2]
+    destroyer.changeDirection();
+    gameboard.placeShip(destroyer, 3, 2); // [3,2],[4,2]
+
+    test('NO ship is sunk', () => {
+      const actual = gameboard.areShipsSunk();
+      expect(actual).toEqual(false);
+    });
+  });
 });
