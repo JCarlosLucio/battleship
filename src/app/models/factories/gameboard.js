@@ -1,8 +1,9 @@
 const Gameboard = () => {
   // create a board 10x10, coords board[row][col];
   const board = Array(10).fill(null).map(() => Array(10).fill(null));
-
   const getBoard = () => board;
+
+  const placedShips = [];
 
   // place ship at coords (y, x)
   const placeShip = (ship, y0, x0) => {
@@ -20,6 +21,8 @@ const Gameboard = () => {
         // places ship w/index
         board[y][x] = { ship, index: i };
       }
+      // adds it to placedShips
+      placedShips.push(ship);
     }
   };
 
@@ -53,7 +56,9 @@ const Gameboard = () => {
     }
   };
 
-  return { getBoard, placeShip, receiveAttack };
+  const areShipsSunk = () => placedShips.every((ship) => ship.isSunk());
+
+  return { getBoard, placeShip, receiveAttack, areShipsSunk };
 };
 
 export default Gameboard;
