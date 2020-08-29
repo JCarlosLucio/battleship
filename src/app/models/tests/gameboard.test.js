@@ -143,5 +143,11 @@ describe('Gameboard', () => {
       const actual = gameboard.areShipsSunk();
       expect(actual).toEqual(false);
     });
+    test('all ships have sunk', () => {
+      gameboard.receiveAttack(3, 2);
+      gameboard.receiveAttack(4, 2);
+      const actual = gameboard.areShipsSunk();
+      expect(actual).toEqual(true);
+    });
   });
 });
