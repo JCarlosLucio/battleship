@@ -14,3 +14,12 @@ describe('Player attack', () => {
     expect(actual).toBe('miss');
   });
 });
+
+describe('Auto attack', () => {
+  test('attack enemy board', () => {
+    enemy.autoAttack(playerBoard);
+
+    const actual = playerBoard.getBoard().flat().every((cell) => cell === null);
+    expect(actual).toBe(false);
+  });
+});
