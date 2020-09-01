@@ -9,7 +9,8 @@ const Gameboard = () => {
   const placeShip = (ship, y0, x0) => {
     const direction = ship.getDirection();
     // checks if out-of-bounds/collision
-    if (checkValid(ship.length, direction, y0, x0)) {
+    const valid = checkValid(ship.length, direction, y0, x0);
+    if (valid) {
       for (let i = 0; i < ship.length; i++) {
         // default: horizontal
         let x = x0 + i;
@@ -23,6 +24,9 @@ const Gameboard = () => {
       }
       // adds it to placedShips
       placedShips.push(ship);
+      return valid;
+    } else {
+      return valid;
     }
   };
 
