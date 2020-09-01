@@ -50,6 +50,16 @@ const Gameboard = () => {
     return cells.every((cell) => cell === null);
   };
 
+  const autoPlace = (ship) => {
+    const rand = () => Math.floor(Math.random() * 10);
+    const y = rand();
+    const x = rand();
+    const changeOrient = Math.random() > 0.5;
+    if (changeOrient) ship.changeDirection();
+    const placed = placeShip(ship, y, x);
+    if (!placed) autoPlace(ship);
+  };
+
   const receiveAttack = (y, x) => {
     // determines whether or not the attack hit a ship
     if (board[y][x] === null) {
