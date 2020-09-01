@@ -36,7 +36,12 @@ const Gameboard = () => {
         x = x0;
         y = y0 + i;
       }
-      cells.push(board[y][x]);
+      // checks that y/x are in-bounds
+      if (y < 10 && x < 10) {
+        cells.push(board[y][x]);
+      } else {
+        return false;
+      }
     }
     return cells.every((cell) => cell === null);
   };
@@ -58,7 +63,7 @@ const Gameboard = () => {
 
   const areShipsSunk = () => placedShips.every((ship) => ship.isSunk());
 
-  return { getBoard, placeShip, receiveAttack, areShipsSunk };
+  return { getBoard, placeShip, receiveAttack, areShipsSunk, autoPlace };
 };
 
 export default Gameboard;
