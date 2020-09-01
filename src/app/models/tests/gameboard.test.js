@@ -102,6 +102,17 @@ describe('Gameboard', () => {
     });
   });
 
+  describe('Auto place', () => {
+    const gameboard = Gameboard();
+    const carrier = Ship('carrier');
+    gameboard.autoPlace(carrier);
+
+    test('autoplace ship', () => {
+      const actual = gameboard.getBoard().flat().every((cell) => cell === null);
+      expect(actual).toBe(false);
+    });
+  });
+
   describe('receive attack', () => {
     const gameboard = Gameboard();
     const carrier = Ship('carrier');
