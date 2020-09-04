@@ -6,3 +6,9 @@
 .fleet-container {
   border: 1px solid green;
 }
+
+.gameboards-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
