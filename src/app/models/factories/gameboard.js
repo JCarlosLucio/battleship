@@ -1,3 +1,5 @@
+import { randCoords } from '../helpers/helpers';
+
 const Gameboard = () => {
   // create a board 10x10, coords board[row][col];
   const board = Array(10).fill(null).map(() => Array(10).fill(null));
@@ -51,9 +53,7 @@ const Gameboard = () => {
   };
 
   const autoPlace = (ship) => {
-    const rand = () => Math.floor(Math.random() * 10);
-    const y = rand();
-    const x = rand();
+    const [y, x] = randCoords();
     const changeOrient = Math.random() > 0.5;
     if (changeOrient) ship.changeDirection();
     const placed = placeShip(ship, y, x);
