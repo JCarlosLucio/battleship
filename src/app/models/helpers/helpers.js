@@ -1,3 +1,5 @@
+import Ship from '../factories/ship';
+
 // CONSTANTS
 export const SHIP_TYPES = [
   'carrier',
