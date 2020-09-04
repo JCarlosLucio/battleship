@@ -1,7 +1,10 @@
 import { SHIP_TYPES, randCoords, createFleet } from '../helpers/helpers';
 
 const Player = (type = 'human') => {
+  const fleet = createFleet(SHIP_TYPES);
+
   const getType = () => type;
+  const getFleet = () => fleet;
 
   // Attacks enemyBoard at coords [y][x];
   const attack = (y, x, enemyBoard) => enemyBoard.receiveAttack(y, x);
@@ -18,7 +21,7 @@ const Player = (type = 'human') => {
     }
   };
 
-  return { getType, attack, autoAttack };
+  return { getType, getFleet, attack, autoAttack };
 };
 
 export default Player;
