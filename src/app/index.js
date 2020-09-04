@@ -13,4 +13,6 @@ const p1Board = Gameboard();
 const p2Board = Gameboard();
 
 // 2. Render Grids
+gameboardView.renderGrid(elements.p1Grid);
+gameboardView.renderGrid(elements.p2Grid);
 // 3. Place Ships
