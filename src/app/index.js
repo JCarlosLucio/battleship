@@ -1,3 +1,1 @@
-import '../styles/main.scss';
-
-console.log('HELLO THERE!');
+import Gameboard from './models/factories/gameboard';
