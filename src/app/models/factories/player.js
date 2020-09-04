@@ -1,3 +1,5 @@
+import { randCoords } from '../helpers/helpers';
+
 const Player = (type = 'human') => {
   const getType = () => type;
 
@@ -5,9 +7,7 @@ const Player = (type = 'human') => {
   const attack = (y, x, enemyBoard) => enemyBoard.receiveAttack(y, x);
 
   const autoAttack = (enemyBoard) => {
-    const rand = () => Math.floor(Math.random() * 10);
-    const y = rand();
-    const x = rand();
+    const [y, x] = randCoords();
     const cell = enemyBoard.getBoard()[y][x];
     if (cell === 'miss' || cell === 'hit') {
       // tries again until a valid cell is picked
