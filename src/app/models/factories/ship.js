@@ -1,10 +1,4 @@
-const SHIP_LENGTHS = {
-  carrier: 5,
-  battleship: 4,
-  cruiser: 3,
-  submarine: 3,
-  destroyer: 2,
-};
+import { SHIP_LENGTHS } from '../helpers/helpers';
 
 const Ship = (type) => {
   // properties
