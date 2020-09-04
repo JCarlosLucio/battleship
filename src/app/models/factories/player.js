@@ -1,4 +1,6 @@
-const Player = () => {
+const Player = (type = 'human') => {
+  const getType = () => type;
+
   // Attacks enemyBoard at coords [y][x];
   const attack = (y, x, enemyBoard) => enemyBoard.receiveAttack(y, x);
 
@@ -8,7 +10,7 @@ const Player = () => {
     const x = rand();
     const cell = enemyBoard.getBoard()[y][x];
     if (cell === 'miss' || cell === 'hit') {
-      // tries again until it valid cell is picked
+      // tries again until a valid cell is picked
       autoAttack(enemyBoard);
     } else {
       // attacks a valid cell
@@ -16,7 +18,7 @@ const Player = () => {
     }
   };
 
-  return { attack, autoAttack };
+  return { getType, attack, autoAttack };
 };
 
 export default Player;
