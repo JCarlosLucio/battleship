@@ -12,3 +12,33 @@
   justify-content: space-around;
   width: 100%;
 }
+
+.grid {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
+  background-color: $grid-color;
+  width: $cell-size*10;
+  height: $cell-size*10;
+
+  &-cell {
+    height: $cell-size;
+    width: $cell-size;
+    border: 1px solid $cell-border;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $cell-hover;
+      -webkit-box-shadow: 0px 0px 5px 0px $cell-hover;
+      -moz-box-shadow: 0px 0px 5px 0px $cell-hover;
+      box-shadow: 0px 0px 5px 0px $cell-hover;
+    }
+  }
+}
+
+.hit {
+  background-color: $hit;
+}
+.miss {
+  background-color: $miss;
+}
