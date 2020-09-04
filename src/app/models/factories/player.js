@@ -1,4 +1,4 @@
-import { randCoords } from '../helpers/helpers';
+import { SHIP_TYPES, randCoords, createFleet } from '../helpers/helpers';
 
 const Player = (type = 'human') => {
   const getType = () => type;
