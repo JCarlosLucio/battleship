@@ -60,6 +60,12 @@ const Gameboard = () => {
     if (!placed) autoPlace(ship);
   };
 
+  const autoPlaceFleet = (fleet) => {
+    for (const ship in fleet) {
+      autoPlace(fleet[ship]);
+    }
+  };
+
   const receiveAttack = (y, x) => {
     // determines whether or not the attack hit a ship
     if (board[y][x] === null) {
@@ -76,7 +82,14 @@ const Gameboard = () => {
 
   const areShipsSunk = () => placedShips.every((ship) => ship.isSunk());
 
-  return { getBoard, placeShip, receiveAttack, areShipsSunk, autoPlace };
+  return {
+    getBoard,
+    placeShip,
+    receiveAttack,
+    areShipsSunk,
+    autoPlace,
+    autoPlaceFleet,
+  };
 };
 
 export default Gameboard;
