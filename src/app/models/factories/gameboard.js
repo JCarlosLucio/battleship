@@ -87,7 +87,6 @@ const Gameboard = () => {
     placeShip,
     receiveAttack,
     areShipsSunk,
-    autoPlace,
     autoPlaceFleet,
   };
 };
