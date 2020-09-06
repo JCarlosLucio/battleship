@@ -5,6 +5,7 @@
 // report whether or not all of their ships have been sunk
 
 import Gameboard from '../factories/gameboard';
+import Player from '../factories/player';
 import Ship from '../factories/ship';
 
 describe('Gameboard', () => {
@@ -110,6 +111,19 @@ describe('Gameboard', () => {
     test('autoplace ship', () => {
       const actual = gameboard.getBoard().flat().every((cell) => cell === null);
       expect(actual).toBe(false);
+    });
+  });
+
+  describe('Auto place fleet', () => {
+    const gameboard = Gameboard();
+    const player = Player();
+    const fleet = player.getFleet();
+    gameboard.autoPlaceFleet(fleet);
+
+    test('autoplace fleet', () => {
+      const actual = gameboard.getBoard().flat().filter((cell) => cell !== null)
+        .length;
+      expect(actual).toBe(17);
     });
   });
 
