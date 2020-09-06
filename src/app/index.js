@@ -16,4 +16,8 @@ const p2Board = Gameboard();
 gameboardView.renderGrid(elements.p1Grid);
 gameboardView.renderGrid(elements.p2Grid);
 
-// 3. Place Ships
+// 3. Place Ships... for now autoPlaceFleet (later button and/or drag-n-drop)
+p1Board.autoPlaceFleet(p1.getFleet());
+p2Board.autoPlaceFleet(p2.getFleet());
+
+// 4. Show placed Ships in grid
