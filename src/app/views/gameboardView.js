@@ -1,3 +1,5 @@
+import { elements } from './base';
+
 const gameboardView = (() => {
   const renderCell = (y, x, status) =>
     `<div class="grid-cell cell-${y}-${x} ${status}" data-y='${y}' data-x='${x}'></div>`;
@@ -25,7 +27,11 @@ const gameboardView = (() => {
     parent.textContent = '';
   };
 
-  return { renderGrid };
+  const renderWinner = (winner) => {
+    elements.winnerText.textContent = `${winner.toUpperCase()} WINS!`;
+  };
+
+  return { renderGrid, renderWinner };
 })();
 
 export default gameboardView;
