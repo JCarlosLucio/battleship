@@ -37,8 +37,10 @@ const ctrlAttack = (e) => {
     // 3. Makes Attacks for p1 'human' and p2 'computer'
     p1.attack(y, x, p2Board);
     p2.autoAttack(p1Board);
+    // 4. Updates grids after attacks to show outcome
+    gameboardView.renderGrid(elements.p1Grid, p1Board);
+    gameboardView.renderGrid(elements.p2Grid, p2Board);
   }
-  // 4. Updates grids after attacks to show outcome
   // 5. Checks if all ships are sunk
   // 6. Disable eventListeners for attacks
   // 7. Display WiNNER
