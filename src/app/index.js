@@ -29,3 +29,6 @@ const ctrlAttack = (e) => {
   const cell = e.target;
   console.log(cell);
 };
+
+// 6. EventListener for p1 'human' player
+elements.p2Grid.addEventListener('click', ctrlAttack);
