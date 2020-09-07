@@ -3,6 +3,7 @@ const gameboardView = (() => {
     `<div class="grid-cell cell-${y}-${x} ${status}" data-y='${y}' data-x='${x}'></div>`;
 
   const renderGrid = (parent, gameboard) => {
+    clearGrid(parent);
     const board = gameboard.getBoard();
     const length = board.length;
     let grid = '';
@@ -24,7 +25,7 @@ const gameboardView = (() => {
     parent.textContent = '';
   };
 
-  return { renderGrid, clearGrid };
+  return { renderGrid };
 })();
 
 export default gameboardView;
