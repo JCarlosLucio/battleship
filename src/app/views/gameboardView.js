@@ -20,7 +20,11 @@ const gameboardView = (() => {
     parent.insertAdjacentHTML('afterbegin', grid);
   };
 
-  return { renderGrid };
+  const clearGrid = (parent) => {
+    parent.textContent = '';
+  };
+
+  return { renderGrid, clearGrid };
 })();
 
 export default gameboardView;
