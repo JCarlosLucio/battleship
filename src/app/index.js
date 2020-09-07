@@ -44,14 +44,17 @@ const ctrlAttack = (e) => {
   }
 
   // 5. Checks if all ships are sunk
-  if (p1Board.areShipsSunk()) {
-    console.log('P2 is the winner');
-  } else if (p2Board.areShipsSunk()) {
-    console.log('P1 is the winner');
+  if (p1Board.areShipsSunk() || p2Board.areShipsSunk()) {
+    let winner = '';
+    if (p1Board.areShipsSunk()) {
+      winner = 'Player 2';
+    } else if (p2Board.areShipsSunk()) {
+      winner = 'Player 1';
+    }
+    // 6. Disable eventListeners for attacks
+    // 7. Display WiNNER
+    // 8. Display 'Play Again? Button'
   }
-  // 6. Disable eventListeners for attacks
-  // 7. Display WiNNER
-  // 8. Display 'Play Again Button?'
 };
 
 // 6. EventListener for p1 'human' player
