@@ -27,7 +27,14 @@ gameboardView.renderGrid(elements.p2Grid, p2Board);
 // 5. ctrlAttack function for eventListeners
 const ctrlAttack = (e) => {
   const cell = e.target;
-  console.log(cell);
+  // 1. Get coords from cell
+  // 2. Checks that board cell hasn't been attacked
+  // 3. Makes Attacks for p1 'human' and p2 'computer'
+  // 4. Updates grids after attacks to show outcome
+  // 5. Checks if all ships are sunk
+  // 6. Disable eventListeners for attacks
+  // 7. Display WiNNER
+  // 8. Display 'Play Again Button?'
 };
 
 // 6. EventListener for p1 'human' player
