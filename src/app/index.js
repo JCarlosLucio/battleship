@@ -23,3 +23,9 @@ p2Board.autoPlaceFleet(p2.getFleet());
 // 4. Update grid w/placed Ships (later only show player board if vs 'computer')
 gameboardView.renderGrid(elements.p1Grid, p1Board);
 gameboardView.renderGrid(elements.p2Grid, p2Board);
+
+// 5. ctrlAttack function for eventListeners
+const ctrlAttack = (e) => {
+  const cell = e.target;
+  console.log(cell);
+};
