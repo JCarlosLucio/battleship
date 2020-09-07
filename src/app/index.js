@@ -28,6 +28,9 @@ gameboardView.renderGrid(elements.p2Grid, p2Board);
 const ctrlAttack = (e) => {
   const cell = e.target;
   // 1. Get coords from cell
+  const y = cell.dataset.y;
+  const x = cell.dataset.x;
+
   // 2. Checks that board cell hasn't been attacked
   // 3. Makes Attacks for p1 'human' and p2 'computer'
   // 4. Updates grids after attacks to show outcome
