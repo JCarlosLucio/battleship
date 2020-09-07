@@ -34,8 +34,10 @@ const ctrlAttack = (e) => {
   // 2. Checks that board cell hasn't been attacked
   const boardCell = p2Board.getBoard()[y][x];
   if (boardCell !== 'miss' && boardCell !== 'hit') {
+    // 3. Makes Attacks for p1 'human' and p2 'computer'
+    p1.attack(y, x, p2Board);
+    p2.autoAttack(p1Board);
   }
-  // 3. Makes Attacks for p1 'human' and p2 'computer'
   // 4. Updates grids after attacks to show outcome
   // 5. Checks if all ships are sunk
   // 6. Disable eventListeners for attacks
