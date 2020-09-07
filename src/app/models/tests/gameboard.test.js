@@ -103,17 +103,6 @@ describe('Gameboard', () => {
     });
   });
 
-  describe('Auto place', () => {
-    const gameboard = Gameboard();
-    const carrier = Ship('carrier');
-    gameboard.autoPlace(carrier);
-
-    test('autoplace ship', () => {
-      const actual = gameboard.getBoard().flat().every((cell) => cell === null);
-      expect(actual).toBe(false);
-    });
-  });
-
   describe('Auto place fleet', () => {
     const gameboard = Gameboard();
     const player = Player();
