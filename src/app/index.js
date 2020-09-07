@@ -52,6 +52,7 @@ const ctrlAttack = (e) => {
       winner = 'Player 1';
     }
     // 6. Disable eventListeners for attacks
+    elements.p2Grid.removeEventListener('click', ctrlAttack);
     // 7. Display WiNNER
     // 8. Display 'Play Again? Button'
   }
