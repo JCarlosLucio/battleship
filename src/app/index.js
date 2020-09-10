@@ -1,4 +1,5 @@
 import Game from './models/factories/game';
+import { elements } from './views/base';
 import '../styles/main.scss';
 
 // Event listeners
@@ -9,8 +10,11 @@ const game = Game('singleplayer');
 game.render();
 
 // 2. EventListener for Auto-Place button or Drag-n-drop
-game.autoPlace();
-// 2.1 Update grids
+elements.autoPlaceBtn.addEventListener('click', (e) => {
+  console.log('autoplaced both players fleets');
+  // 2.1 Update grids
+  game.autoPlace();
+});
 
 // 3. EventListener for Start Game
 game.addGridEventListeners();
