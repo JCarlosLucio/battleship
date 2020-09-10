@@ -21,8 +21,8 @@ p1Board.autoPlaceFleet(p1.getFleet());
 p2Board.autoPlaceFleet(p2.getFleet());
 
 // 4. Update grid w/placed Ships (later only show player board if vs 'computer')
-gameboardView.renderGrid(elements.p1Grid, p1Board);
-gameboardView.renderGrid(elements.p2Grid, p2Board);
+gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
+gameboardView.renderGrid(elements.p2Grid, p2Board, p2.getType());
 
 // 5. ctrlAttack function for eventListeners
 const ctrlAttack = (e) => {
@@ -39,8 +39,8 @@ const ctrlAttack = (e) => {
     p2.autoAttack(p1Board);
 
     // 4. Updates grids after attacks to show outcome
-    gameboardView.renderGrid(elements.p1Grid, p1Board);
-    gameboardView.renderGrid(elements.p2Grid, p2Board);
+    gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
+    gameboardView.renderGrid(elements.p2Grid, p2Board, p2.getType());
   }
 
   // 5. Checks if all ships are sunk
