@@ -4,7 +4,7 @@ const gameboardView = (() => {
   const renderCell = (y, x, status) =>
     `<div class="grid-cell cell-${y}-${x} ${status}" data-y='${y}' data-x='${x}'></div>`;
 
-  const renderGrid = (parent, gameboard) => {
+  const renderGrid = (parent, gameboard, type) => {
     clearGrid(parent);
     const board = gameboard.getBoard();
     const length = board.length;
@@ -15,7 +15,11 @@ const gameboardView = (() => {
         if (status === null) {
           status = '';
         } else if (status.ship) {
-          status = 'placed';
+          if (type === 'human') {
+            status = 'placed';
+          } else {
+            status = '';
+          }
         }
         grid += renderCell(i, j, status);
       }
