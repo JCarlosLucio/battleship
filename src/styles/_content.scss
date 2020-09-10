@@ -53,3 +53,20 @@
   margin: 5rem;
   text-transform: uppercase;
 }
+
+// Buttons
+.fleet-autoplace {
+  font-size: 1rem;
+  width: 10rem;
+  height: 2rem;
+  background-color: $bg-color;
+  color: inherit;
+  border: 1px solid $cell-border;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 5px 0px $cell-hover;
+    -moz-box-shadow: 0px 0px 5px 0px $cell-hover;
+    box-shadow: 0px 0px 5px 0px $cell-hover;
+  }
+}
