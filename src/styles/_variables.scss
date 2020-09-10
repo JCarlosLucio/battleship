@@ -1,13 +1,29 @@
 // GENERAL VARIABLES
-$bg-color: #140f29;
+
+// BLUE HUD
+$bg-color: #000e28;
+$bg-gradient: radial-gradient(circle, #0f3366 16%, #000e28 85%);
+$text-color: #05feff;
+
+// GREEN HUD
+// $bg-color: #102923;
+// $bg-gradient: radial-gradient(circle, #102923 24%, #040404 85%);
+// $text-color: #51e7d6;
 
 // GRID VARIABLES
-$grid-color: #157691;
+$cell-size: 3rem;
 
-$cell-size: 2rem;
+// BLUE HUD
+$grid-color: #157691;
 $cell-border: #6cecfd;
 $cell-hover: #6cecfd;
 $cell-color: #00c1fc;
+
+// GREEN HUD
+// $grid-color: #15362e;
+// $cell-border: #51e7d6;
+// $cell-hover: #51e7d6;
+// $cell-color: #2d9f89;
 
 $hit: red;
 $miss: gray;
