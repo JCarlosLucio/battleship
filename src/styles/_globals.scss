@@ -6,9 +6,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  background: $bg-color;
+  background: $bg-gradient;
+  background-size: cover;
+}
+
 html,
 body {
   min-height: 100%;
   font-size: 100%;
-  background-color: $bg-color;
+  color: $text-color;
 }
