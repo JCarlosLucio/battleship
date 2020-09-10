@@ -32,7 +32,7 @@ const gameboardView = (() => {
   };
 
   const renderWinner = (winner) => {
-    elements.winnerText.textContent = `${winner.toUpperCase()} WINS!`;
+    elements.infoText.textContent = `${winner.toUpperCase()} WINS!`;
   };
 
   return { renderGrid, renderWinner };
