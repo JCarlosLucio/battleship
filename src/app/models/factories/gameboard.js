@@ -2,10 +2,10 @@ import { randCoords } from '../helpers/helpers';
 
 const Gameboard = () => {
   // create a board 10x10, coords board[row][col];
-  const board = Array(10).fill(null).map(() => Array(10).fill(null));
+  let board = Array(10).fill(null).map(() => Array(10).fill(null));
   const getBoard = () => board;
 
-  const placedShips = [];
+  let placedShips = [];
 
   // place ship at coords (y, x)
   const placeShip = (ship, y0, x0) => {
@@ -82,12 +82,18 @@ const Gameboard = () => {
 
   const areShipsSunk = () => placedShips.every((ship) => ship.isSunk());
 
+  const reset = () => {
+    board = Array(10).fill(null).map(() => Array(10).fill(null));
+    placedShips = [];
+  };
+
   return {
     getBoard,
     placeShip,
     receiveAttack,
     areShipsSunk,
     autoPlaceFleet,
+    reset,
   };
 };
 
