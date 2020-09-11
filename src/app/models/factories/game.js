@@ -26,6 +26,8 @@ const Game = (type) => {
 
   // 3. Place Ships... for now autoPlaceFleet (later button and/or drag-n-drop)
   const autoPlace = () => {
+    p1Board.reset();
+    p2Board.reset();
     p1Board.autoPlaceFleet(p1.getFleet());
     p2Board.autoPlaceFleet(p2.getFleet());
     render();
