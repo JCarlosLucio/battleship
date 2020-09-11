@@ -175,4 +175,16 @@ describe('Gameboard', () => {
       expect(actual).toEqual(true);
     });
   });
+
+  describe('reset board', () => {
+    const gameboard = Gameboard();
+    const player = Player();
+    const fleet = player.getFleet();
+    gameboard.autoPlaceFleet(fleet);
+    gameboard.reset();
+    test('empties board', () => {
+      const actual = gameboard.getBoard().flat().every((cell) => cell === null);
+      expect(actual).toEqual(true);
+    });
+  });
 });
