@@ -32,6 +32,7 @@ const gameboardView = (() => {
   };
 
   const renderWinner = (winner) => {
+    elements.infoContainer.classList.add('show');
     elements.infoText.textContent = `${winner.toUpperCase()} WINS!`;
   };
 
