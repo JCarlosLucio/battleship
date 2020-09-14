@@ -61,9 +61,8 @@ const Game = (type) => {
         }
         // 6. Disable eventListeners for attacks
         elements.p2Grid.removeEventListener('click', ctrlAttack);
-        // 7. Display WiNNER
+        // 7. Display WiNNER / Play Again? Button'
         gameboardView.renderWinner(winner);
-        // 8. Display 'Play Again? Button'
       }
     }
   };
@@ -74,7 +73,14 @@ const Game = (type) => {
       elements.p1Grid.addEventListener('click', ctrlAttack);
     elements.p2Grid.addEventListener('click', ctrlAttack);
   };
-  return { render, autoPlace, addGridEventListeners };
+
+  const playAgain = () => {
+    p1Board.reset();
+    p2Board.reset();
+    render();
+    gameboardView.toggleShowInfoContainer();
+  };
+  return { render, autoPlace, addGridEventListeners, playAgain };
 };
 
 export default Game;
