@@ -32,23 +32,23 @@ const gameboardView = (() => {
   };
 
   const renderWinner = (winner) => {
-    toggleShowInfoContainer();
+    toggleShow(elements.infoContainer);
     elements.infoText.textContent = `${winner.toUpperCase()} WINS!`;
   };
 
-  const toggleShowInfoContainer = () => {
-    const infoClasses = elements.infoContainer.classList;
-    if (infoClasses.contains('show')) {
-      infoClasses.remove('show');
+  const toggleShow = (element) => {
+    const elementClasses = element.classList;
+    if (elementClasses.contains('show')) {
+      elementClasses.remove('show');
     } else {
-      infoClasses.add('show');
+      elementClasses.add('show');
     }
   };
 
   return {
     renderGrid,
     renderWinner,
-    toggleShowInfoContainer,
+    toggleShow,
   };
 })();
 
