@@ -19,7 +19,10 @@ elements.autoPlaceBtn.addEventListener('click', (e) => {
 });
 
 // 3. EventListener for Start Game
-game.addGridEventListeners();
+elements.startBtn.addEventListener('click', (e) => {
+  console.log('GAME START');
+  game.startGame();
+});
 
 // 4. EventListener for Play Again?
 elements.playAgainBtn.addEventListener('click', (e) => {
