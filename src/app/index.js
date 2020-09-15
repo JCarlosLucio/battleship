@@ -5,7 +5,9 @@ import '../styles/main.scss';
 // Event listeners
 
 // 1. Event Listener for game type singleplayer / multiplayer (for now only singleplayer)
-const game = Game('singleplayer');
+let gameType = 'singleplayer';
+let game = Game(gameType);
+
 // 1.1 render empty grids
 game.render();
 
@@ -22,5 +24,5 @@ game.addGridEventListeners();
 // 4. EventListener for Play Again?
 elements.playAgainBtn.addEventListener('click', (e) => {
   console.log('LETS PLAY AGAIN');
-  game.playAgain();
+  game.playAgain(gameType);
 });
