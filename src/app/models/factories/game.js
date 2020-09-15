@@ -74,6 +74,10 @@ const Game = (type) => {
     elements.p2Grid.addEventListener('click', ctrlAttack);
   };
 
+  const startGame = () => {
+    addGridEventListeners();
+  };
+
   const playAgain = (type) => {
     resetGame(type);
     render();
@@ -90,7 +94,7 @@ const Game = (type) => {
     p1Board.reset();
     p2Board.reset();
   };
-  return { render, autoPlace, addGridEventListeners, playAgain };
+  return { render, autoPlace, playAgain, startGame };
 };
 
 export default Game;
