@@ -6,7 +6,7 @@ import { elements } from '../../views/base';
 // INIT
 const Game = (type) => {
   // 1. Create Players
-  const p1 = Player('human');
+  let p1 = Player('human');
   let p2;
   if (type === 'singleplayer') {
     p2 = Player('computer');
@@ -74,9 +74,21 @@ const Game = (type) => {
     elements.p2Grid.addEventListener('click', ctrlAttack);
   };
 
-  const playAgain = () => {
+  const playAgain = (type) => {
+    resetGame(type);
     render();
     gameboardView.toggleShow(elements.infoContainer);
+  };
+
+  const resetGame = (type) => {
+    p1 = Player('human');
+    if (type === 'singleplayer') {
+      p2 = Player('computer');
+    } else {
+      p2 = Player('human');
+    }
+    p1Board.reset();
+    p2Board.reset();
   };
   return { render, autoPlace, addGridEventListeners, playAgain };
 };
