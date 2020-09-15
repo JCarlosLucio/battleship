@@ -5,4 +5,5 @@ export const elements = {
   infoText: document.querySelector('.info-text'),
   autoPlaceBtn: document.querySelector('.fleet-autoplace'),
   playAgainBtn: document.querySelector('.play-again'),
+  startBtn: document.querySelector('.start'),
 };
