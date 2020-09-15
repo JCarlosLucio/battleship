@@ -75,10 +75,8 @@ const Game = (type) => {
   };
 
   const playAgain = () => {
-    p1Board.reset();
-    p2Board.reset();
     render();
-    gameboardView.toggleShowInfoContainer();
+    gameboardView.toggleShow(elements.infoContainer);
   };
   return { render, autoPlace, addGridEventListeners, playAgain };
 };
