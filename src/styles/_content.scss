@@ -100,9 +100,12 @@
   height: 5rem;
 }
 .start {
+  visibility: hidden;
   font-size: 2rem;
   width: 10rem;
   height: 3.5rem;
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 
 .info-container {
@@ -124,9 +127,9 @@
   -webkit-backdrop-filter: blur(10px);
   opacity: 0;
   transition: opacity 2s ease;
+}
 
-  &.show {
-    visibility: visible;
-    opacity: 1;
-  }
+.show {
+  visibility: visible;
+  opacity: 1;
 }
