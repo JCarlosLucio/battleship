@@ -31,6 +31,7 @@ const Game = (type) => {
     p1Board.autoPlaceFleet(p1.getFleet());
     p2Board.autoPlaceFleet(p2.getFleet());
     render();
+    elements.startBtn.classList.add('show');
   };
 
   // 5. ctrlAttack function for eventListeners
