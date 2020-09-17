@@ -44,11 +44,20 @@ const gameboardView = (() => {
       elementClasses.add('show');
     }
   };
+  const toggleGridDisabled = (element) => {
+    const elementClasses = element.classList;
+    if (elementClasses.contains('grid-disabled')) {
+      elementClasses.remove('grid-disabled');
+    } else {
+      elementClasses.add('grid-disabled');
+    }
+  };
 
   return {
     renderGrid,
     renderWinner,
     toggleShow,
+    toggleGridDisabled,
   };
 })();
 
