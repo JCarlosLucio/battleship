@@ -85,6 +85,8 @@ const Game = (type) => {
     resetGame(type);
     render();
     gameboardView.toggleShow(elements.infoContainer);
+    gameboardView.toggleGridDisabled(elements.p1Gameboard);
+    gameboardView.toggleGridDisabled(elements.p2Gameboard);
   };
 
   const resetGame = (type) => {
