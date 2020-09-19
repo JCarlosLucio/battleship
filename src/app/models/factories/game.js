@@ -79,6 +79,8 @@ const Game = (type) => {
     addGridEventListeners();
     gameboardView.toggleGridDisabled(elements.p1Gameboard);
     gameboardView.toggleGridDisabled(elements.p2Gameboard);
+    elements.startBtn.classList.remove('show');
+    elements.autoPlaceBtn.classList.remove('show');
   };
 
   const playAgain = (type) => {
