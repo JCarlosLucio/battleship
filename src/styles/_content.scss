@@ -1,6 +1,6 @@
 .game-container {
   display: flex;
-  justify-content: stretch;
+  justify-content: center;
 }
 
 .fleet-container {
@@ -101,6 +101,12 @@
     -moz-box-shadow: 0px 0px 5px 0px $cell-hover;
     box-shadow: 0px 0px 5px 0px $cell-hover;
   }
+}
+
+.fleet-autoplace {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 .play-again {
   font-size: inherit;
