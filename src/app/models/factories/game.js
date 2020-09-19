@@ -5,7 +5,7 @@ import { elements } from '../../views/base';
 
 // INIT
 const Game = (type) => {
-  // 1. Create Players
+  // Create Players
   let p1 = Player('human');
   let p2;
   if (type === 'singleplayer') {
@@ -14,27 +14,30 @@ const Game = (type) => {
     p2 = Player('human');
   }
 
-  // 2. Create boards
+  // Create boards
   const p1Board = Gameboard();
   const p2Board = Gameboard();
 
-  // 2. Render Empty Grids
-  const render = () => {
-    gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
-    gameboardView.renderGrid(elements.p2Grid, p2Board, p2.getType());
-  };
-
-  // 3. Place Ships... for now autoPlaceFleet (later button and/or drag-n-drop)
-  const autoPlace = () => {
+  // Reset Game
+  const resetGame = (type) => {
+    p1 = Player('human');
+    if (type === 'singleplayer') {
+      p2 = Player('computer');
+    } else {
+      p2 = Player('human');
+    }
     p1Board.reset();
     p2Board.reset();
-    p1Board.autoPlaceFleet(p1.getFleet());
-    p2Board.autoPlaceFleet(p2.getFleet());
-    render();
-    elements.startBtn.classList.add('show');
   };
 
-  // 5. ctrlAttack function for eventListeners
+  //  EventListener for p1 'human' player
+  const addGridEventListeners = () => {
+    if (p2.getType === 'human')
+      elements.p1Grid.addEventListener('click', ctrlAttack);
+    elements.p2Grid.addEventListener('click', ctrlAttack);
+  };
+
+  // ctrlAttack function for eventListeners
   const ctrlAttack = (e) => {
     const cell = e.target;
     if (cell.classList.contains('grid-cell')) {
@@ -50,7 +53,7 @@ const Game = (type) => {
         p2.autoAttack(p1Board);
 
         // 4. Updates grids after attacks to show outcome
-        render();
+        renderGrids();
       }
       // 5. Checks if all ships are sunk
       if (p1Board.areShipsSunk() || p2Board.areShipsSunk()) {
@@ -68,41 +71,33 @@ const Game = (type) => {
     }
   };
 
-  // 6. EventListener for p1 'human' player
-  const addGridEventListeners = () => {
-    if (p2.getType === 'human')
-      elements.p1Grid.addEventListener('click', ctrlAttack);
-    elements.p2Grid.addEventListener('click', ctrlAttack);
+  // Render Grids / Update Grids
+  const renderGrids = () => {
+    gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
+    gameboardView.renderGrid(elements.p2Grid, p2Board, p2.getType());
+  };
+
+  const autoPlace = () => {
+    p1Board.reset();
+    p2Board.reset();
+    p1Board.autoPlaceFleet(p1.getFleet());
+    p2Board.autoPlaceFleet(p2.getFleet());
+    renderGrids();
+    gameboardView.autoPlace();
   };
 
   const startGame = () => {
     addGridEventListeners();
-    gameboardView.toggleGridDisabled(elements.p1Gameboard);
-    gameboardView.toggleGridDisabled(elements.p2Gameboard);
-    elements.startBtn.classList.remove('show');
-    elements.autoPlaceBtn.classList.remove('show');
+    gameboardView.startGame();
   };
 
   const playAgain = (type) => {
     resetGame(type);
-    render();
-    gameboardView.toggleShow(elements.infoContainer);
-    gameboardView.toggleGridDisabled(elements.p1Gameboard);
-    gameboardView.toggleGridDisabled(elements.p2Gameboard);
-    elements.autoPlaceBtn.classList.add('show');
+    renderGrids();
+    gameboardView.playAgain();
   };
 
-  const resetGame = (type) => {
-    p1 = Player('human');
-    if (type === 'singleplayer') {
-      p2 = Player('computer');
-    } else {
-      p2 = Player('human');
-    }
-    p1Board.reset();
-    p2Board.reset();
-  };
-  return { render, autoPlace, playAgain, startGame };
+  return { renderGrids, autoPlace, startGame, playAgain };
 };
 
 export default Game;
