@@ -89,6 +89,7 @@ const Game = (type) => {
     gameboardView.toggleShow(elements.infoContainer);
     gameboardView.toggleGridDisabled(elements.p1Gameboard);
     gameboardView.toggleGridDisabled(elements.p2Gameboard);
+    elements.autoPlaceBtn.classList.add('show');
   };
 
   const resetGame = (type) => {
