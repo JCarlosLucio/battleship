@@ -9,12 +9,11 @@ let gameType = 'singleplayer';
 let game = Game(gameType);
 
 // 1.1 render empty grids
-game.render();
+game.renderGrids();
 
 // 2. EventListener for Auto-Place button or Drag-n-drop
 elements.autoPlaceBtn.addEventListener('click', (e) => {
   console.log('autoplaced both players fleets');
-  // 2.1 Update grids
   game.autoPlace();
 });
 
