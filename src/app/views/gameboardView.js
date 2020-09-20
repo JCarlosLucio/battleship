@@ -32,15 +32,20 @@ const gameboardView = (() => {
   };
 
   const renderFleet = (fleet) => {
-    // create draggable 'ship'-container
     for (const ship in fleet) {
+      // create draggable 'ship'-container
       const container = document.createElement('div');
       container.classList.add('ship', `${fleet[ship].id}-container`);
       container.setAttribute('draggable', true);
       container.dataset.ship = `${fleet[ship].id}`;
+      // create inner ship divs
+      let divs = '';
+      for (let i = 0; i < fleet[ship].length; i++) {
+        divs += `<div class=${fleet[ship].id} data-index='${i}'></div>`;
+      }
+      container.insertAdjacentHTML('afterbegin', divs);
       elements.fleetContainer.prepend(container);
     }
-    // create inner ship divs
   };
 
   const autoPlace = () => {
