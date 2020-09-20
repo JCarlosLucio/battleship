@@ -35,6 +35,19 @@ const Game = (type) => {
     // add Drag-N-Drop EventListeners
   };
 
+  //  ===== Drag N Drop - (for now for p1 only) ===
+  const addDragAndDropEvenListeners = () => {
+    const cells = elements.p1Grid.childNodes;
+    // Add EventListners for drag/drop events
+    ships.forEach((ship) => ship.addEventListener('dragstart', dragStart));
+    // cells.forEach((cell) => cell.addEventListener('dragstart', dragStart));
+    cells.forEach((cell) => cell.addEventListener('dragover', dragOver));
+    cells.forEach((cell) => cell.addEventListener('dragenter', dragEnter));
+    cells.forEach((cell) => cell.addEventListener('dragleave', dragLeave));
+    cells.forEach((cell) => cell.addEventListener('drop', dragDrop));
+    cells.forEach((cell) => cell.addEventListener('dragend', dragEnd));
+  };
+
   //  EventListener for p1 'human' player
   const addGridEventListeners = () => {
     if (p2.getType === 'human')
