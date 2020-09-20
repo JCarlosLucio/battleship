@@ -32,7 +32,7 @@ const Game = (type) => {
 
   const renderFleet = () => {
     gameboardView.renderFleet(p1.getFleet());
-    // add Drag-N-Drop EventListeners
+    addDragAndDropEvenListeners();
   };
 
   //  ===== Drag N Drop - (for now for p1 only) ===
