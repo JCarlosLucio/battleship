@@ -39,18 +39,20 @@ const Game = (type) => {
   const addDragAndDropEvenListeners = () => {
     const ships = document.querySelectorAll('.ship');
     const cells = elements.p1Grid.childNodes;
+
     // Add EventListener to know which index is being held when dragging
-    ships.forEach((ship) =>
-      ship.addEventListener('mousedown', getDraggedShipIndex)
-    );
     // Add EventListners for drag/drop events
-    ships.forEach((ship) => ship.addEventListener('dragstart', dragStart));
-    // cells.forEach((cell) => cell.addEventListener('dragstart', dragStart));
-    cells.forEach((cell) => cell.addEventListener('dragover', dragOver));
-    cells.forEach((cell) => cell.addEventListener('dragenter', dragEnter));
-    cells.forEach((cell) => cell.addEventListener('dragleave', dragLeave));
-    cells.forEach((cell) => cell.addEventListener('drop', dragDrop));
-    cells.forEach((cell) => cell.addEventListener('dragend', dragEnd));
+    for (const ship of ships) {
+      ship.addEventListener('mousedown', getDraggedShipIndex);
+      ship.addEventListener('dragstart', dragStart);
+      ship.addEventListener('dragend', dragEnd);
+    }
+    for (const cell of cells) {
+      cell.addEventListener('dragover', dragOver);
+      cell.addEventListener('dragenter', dragEnter);
+      cell.addEventListener('dragleave', dragLeave);
+      cell.addEventListener('drop', dragDrop);
+    }
   };
 
   let draggedShip;
