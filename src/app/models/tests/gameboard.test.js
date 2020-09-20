@@ -103,13 +103,44 @@ describe('Gameboard', () => {
     });
   });
 
+  describe('All ships placed', () => {
+    const gameboard = Gameboard();
+    const carrier = Ship('carrier');
+    const battleship = Ship('battleship');
+    const cruiser = Ship('cruiser');
+    const submarine = Ship('submarine');
+    const destroyer = Ship('destroyer');
+
+    test('no ships placed', () => {
+      const actual = gameboard.areAllShipsPlaced();
+      expect(actual).toBe(false);
+    });
+    test('some ships placed', () => {
+      gameboard.placeShip(carrier, 0, 0);
+      gameboard.placeShip(battleship, 1, 0);
+      const actual = gameboard.areAllShipsPlaced();
+      expect(actual).toBe(false);
+    });
+    test('Placed all ships', () => {
+      gameboard.placeShip(cruiser, 2, 0);
+      gameboard.placeShip(submarine, 3, 0);
+      gameboard.placeShip(destroyer, 4, 0);
+      const actual = gameboard.areAllShipsPlaced();
+      expect(actual).toBe(true);
+    });
+  });
+
   describe('Auto place fleet', () => {
     const gameboard = Gameboard();
     const player = Player();
     const fleet = player.getFleet();
     gameboard.autoPlaceFleet(fleet);
 
-    test('autoplace fleet', () => {
+    test('all ships placed', () => {
+      const actual = gameboard.areAllShipsPlaced();
+      expect(actual).toBe(true);
+    });
+    test('number of cells matches all ships placed', () => {
       const actual = gameboard.getBoard().flat().filter((cell) => cell !== null)
         .length;
       expect(actual).toBe(17);
