@@ -20,7 +20,7 @@ const gameboardView = (() => {
           status = '';
         } else if (status.ship) {
           if (type === 'human') {
-            status = 'placed';
+            status = status.ship.id;
           } else {
             status = '';
           }
