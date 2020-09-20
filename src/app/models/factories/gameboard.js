@@ -1,4 +1,4 @@
-import { randCoords } from '../helpers/helpers';
+import { randCoords, SHIP_TYPES } from '../helpers/helpers';
 
 const Gameboard = () => {
   // create a board 10x10, coords board[row][col];
@@ -6,6 +6,7 @@ const Gameboard = () => {
   const getBoard = () => board;
 
   let placedShips = [];
+  const areAllShipsPlaced = () => placedShips.length === SHIP_TYPES.length;
 
   // place ship at coords (y, x)
   const placeShip = (ship, y0, x0) => {
@@ -90,6 +91,7 @@ const Gameboard = () => {
   return {
     getBoard,
     placeShip,
+    areAllShipsPlaced,
     receiveAttack,
     areShipsSunk,
     autoPlaceFleet,
