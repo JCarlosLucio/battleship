@@ -1,5 +1,6 @@
 import Gameboard from './gameboard';
 import Player from './player';
+import Drag from './drag';
 import gameboardView from '../../views/gameboardView';
 import { elements } from '../../views/base';
 
@@ -18,6 +19,9 @@ const Game = (type) => {
   const p1Board = Gameboard();
   const p2Board = Gameboard();
 
+  // Create drag for Drag-N-Drop
+  const drag = Drag(p1, p1Board);
+
   // Reset Game
   const resetGame = (type) => {
     p1 = Player('human');
@@ -32,7 +36,7 @@ const Game = (type) => {
 
   const renderFleet = () => {
     gameboardView.renderFleet(p1.getFleet());
-    addDragAndDropEvenListeners();
+    drag.addDragAndDropEvenListeners();
   };
 
   //  EventListener for p1 'human' player
