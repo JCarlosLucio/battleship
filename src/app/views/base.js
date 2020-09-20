@@ -8,4 +8,5 @@ export const elements = {
   autoPlaceBtn: document.querySelector('.fleet-autoplace'),
   playAgainBtn: document.querySelector('.play-again'),
   startBtn: document.querySelector('.start'),
+  fleetContainer: document.querySelector('.fleet-container'),
 };
