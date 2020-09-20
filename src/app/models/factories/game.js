@@ -66,7 +66,25 @@ const Game = (type) => {
     // console.log('Leave');
   };
   const dragDrop = (e) => {
-    // console.log('Drop')
+    // get cell
+    const cell = e.target;
+    // get coords
+    const y = Number(cell.dataset.y);
+    const x = Number(cell.dataset.x);
+    // get ship
+    const p1Ship = p1.getFleet()[draggedShip.dataset.ship];
+    console.log('DROP', draggedShip, p1Ship, { x }, { y });
+    // place ship and get outcome
+    const outcome = p1Board.placeShip(p1Ship, y, x);
+    console.log(outcome);
+    if (outcome) {
+      // update grid
+      gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
+      addDragAndDropEvenListeners();
+      // todo - remove ship from fleet container
+      // todo - show START button after last ship has been placed
+      // todo - enemy autoPlaceFleet
+    }
   };
   const dragEnd = (e) => {
     // console.log('End');
