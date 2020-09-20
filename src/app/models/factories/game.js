@@ -37,7 +37,12 @@ const Game = (type) => {
 
   //  ===== Drag N Drop - (for now for p1 only) ===
   const addDragAndDropEvenListeners = () => {
+    const ships = document.querySelectorAll('.ship');
     const cells = elements.p1Grid.childNodes;
+    // Add EventListener to know which index is being held when dragging
+    ships.forEach((ship) =>
+      ship.addEventListener('mousedown', getDraggedShipIndex)
+    );
     // Add EventListners for drag/drop events
     ships.forEach((ship) => ship.addEventListener('dragstart', dragStart));
     // cells.forEach((cell) => cell.addEventListener('dragstart', dragStart));
@@ -49,6 +54,13 @@ const Game = (type) => {
   };
 
   let draggedShip;
+  let draggedShipIndex;
+  // console.log(draggedShip);
+
+  const getDraggedShipIndex = (e) => {
+    draggedShipIndex = e.target.dataset.index;
+    // console.log(draggedShipIndex);
+  };
 
   const dragStart = (e) => {
     draggedShip = e.target;
