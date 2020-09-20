@@ -10,6 +10,8 @@ let game = Game(gameType);
 
 // 1.1 render empty grids
 game.renderGrids();
+// 1.2 Render Fleet + EventListeners for  Drag-n-drop
+game.renderFleet();
 
 // 2. EventListener for Auto-Place button or Drag-n-drop
 elements.autoPlaceBtn.addEventListener('click', (e) => {
