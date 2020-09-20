@@ -8,7 +8,7 @@ const Drag = (p1, p1Board) => {
 
   //  Drag-N-Drop (for now for p1 only)
   const getDraggedShipIndex = (e) => {
-    draggedShipIndex = e.target.dataset.index;
+    draggedShipIndex = Number(e.target.dataset.index);
     // console.log(draggedShipIndex);
   };
 
@@ -30,17 +30,18 @@ const Drag = (p1, p1Board) => {
   const dragDrop = (e) => {
     // get cell
     const cell = e.target;
-    // get coords - adjust coords according to draggedShipIndex
-    // todo - adjust coords for direction
-    const y = Number(cell.dataset.y);
-    const x = Number(cell.dataset.x) - Number(draggedShipIndex);
-
     // get ship
     const p1Ship = p1.getFleet()[draggedShip.dataset.ship];
-    console.log('DROP', draggedShip, p1Ship, { x }, { y });
+    // get direction
+    const isHorizontal = p1Ship.getDirection() === 'horizontal';
+    // get/adjust coords according to isHorizontal w/draggedShipIndex
+    const y = Number(cell.dataset.y) - (isHorizontal ? 0 : draggedShipIndex);
+    const x = Number(cell.dataset.x) - (isHorizontal ? draggedShipIndex : 0);
+
     // place ship and get outcome
     const outcome = p1Board.placeShip(p1Ship, y, x);
-    console.log(outcome);
+    console.log('DROP', { outcome }, { x }, { y }, p1Ship);
+
     if (outcome) {
       // update grid
       gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
