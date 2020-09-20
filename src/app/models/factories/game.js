@@ -80,9 +80,10 @@ const Game = (type) => {
   const dragDrop = (e) => {
     // get cell
     const cell = e.target;
-    // get coords
+    // get coords - adjust coords according to draggedShipIndex
+    // todo - adjust coords for direction
     const y = Number(cell.dataset.y);
-    const x = Number(cell.dataset.x);
+    const x = Number(cell.dataset.x) - Number(draggedShipIndex);
     // get ship
     const p1Ship = p1.getFleet()[draggedShip.dataset.ship];
     console.log('DROP', draggedShip, p1Ship, { x }, { y });
