@@ -48,8 +48,11 @@ const Game = (type) => {
     cells.forEach((cell) => cell.addEventListener('dragend', dragEnd));
   };
 
+  let draggedShip;
+
   const dragStart = (e) => {
-    // console.log('Start');
+    draggedShip = e.target;
+    console.log('start', { draggedShip });
   };
   const dragOver = (e) => {
     e.preventDefault();
