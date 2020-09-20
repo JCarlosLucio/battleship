@@ -30,6 +30,11 @@ const Game = (type) => {
     p2Board.reset();
   };
 
+  const renderFleet = () => {
+    gameboardView.renderFleet(p1.getFleet());
+    // add Drag-N-Drop EventListeners
+  };
+
   //  EventListener for p1 'human' player
   const addGridEventListeners = () => {
     if (p2.getType === 'human')
@@ -97,7 +102,14 @@ const Game = (type) => {
     gameboardView.playAgain();
   };
 
-  return { renderGrids, autoPlace, startGame, playAgain };
+  return {
+    renderGrids,
+    renderFleet,
+    addDragAndDropEvenListeners,
+    autoPlace,
+    startGame,
+    playAgain,
+  };
 };
 
 export default Game;
