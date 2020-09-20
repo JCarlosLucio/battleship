@@ -81,7 +81,7 @@ const Gameboard = () => {
     return board[y][x];
   };
 
-  const areShipsSunk = () => placedShips.every((ship) => ship.isSunk());
+  const areAllShipsSunk = () => placedShips.every((ship) => ship.isSunk());
 
   const reset = () => {
     board = Array(10).fill(null).map(() => Array(10).fill(null));
@@ -93,7 +93,7 @@ const Gameboard = () => {
     placeShip,
     areAllShipsPlaced,
     receiveAttack,
-    areShipsSunk,
+    areAllShipsSunk,
     autoPlaceFleet,
     reset,
   };

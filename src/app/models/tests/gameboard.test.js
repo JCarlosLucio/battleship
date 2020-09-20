@@ -180,7 +180,7 @@ describe('Gameboard', () => {
     });
   });
 
-  describe('are ships sunk', () => {
+  describe('are all ships sunk', () => {
     const gameboard = Gameboard();
     const submarine = Ship('submarine');
     const destroyer = Ship('destroyer');
@@ -189,20 +189,20 @@ describe('Gameboard', () => {
     gameboard.placeShip(destroyer, 3, 2); // [3,2],[4,2]
 
     test('NO ship is sunk', () => {
-      const actual = gameboard.areShipsSunk();
+      const actual = gameboard.areAllShipsSunk();
       expect(actual).toEqual(false);
     });
     test('1 ship has sunk', () => {
       gameboard.receiveAttack(2, 0);
       gameboard.receiveAttack(2, 1);
       gameboard.receiveAttack(2, 2);
-      const actual = gameboard.areShipsSunk();
+      const actual = gameboard.areAllShipsSunk();
       expect(actual).toEqual(false);
     });
     test('all ships have sunk', () => {
       gameboard.receiveAttack(3, 2);
       gameboard.receiveAttack(4, 2);
-      const actual = gameboard.areShipsSunk();
+      const actual = gameboard.areAllShipsSunk();
       expect(actual).toEqual(true);
     });
   });

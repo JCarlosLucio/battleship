@@ -65,11 +65,11 @@ const Game = (type) => {
         renderGrids();
       }
       // 5. Checks if all ships are sunk
-      if (p1Board.areShipsSunk() || p2Board.areShipsSunk()) {
+      if (p1Board.areAllShipsSunk() || p2Board.areAllShipsSunk()) {
         let winner = '';
-        if (p1Board.areShipsSunk()) {
+        if (p1Board.areAllShipsSunk()) {
           winner = 'Player 2';
-        } else if (p2Board.areShipsSunk()) {
+        } else if (p2Board.areAllShipsSunk()) {
           winner = 'Player 1';
         }
         // 6. Disable eventListeners for attacks
