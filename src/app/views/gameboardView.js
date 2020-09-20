@@ -33,6 +33,13 @@ const gameboardView = (() => {
 
   const renderFleet = (fleet) => {
     // create draggable 'ship'-container
+    for (const ship in fleet) {
+      const container = document.createElement('div');
+      container.classList.add('ship', `${fleet[ship].id}-container`);
+      container.setAttribute('draggable', true);
+      container.dataset.ship = `${fleet[ship].id}`;
+      elements.fleetContainer.prepend(container);
+    }
     // create inner ship divs
   };
 
