@@ -4,35 +4,18 @@ import gameboardView from '../../views/gameboardView';
 const Drag = (p1, p1Board) => {
   let draggedShip;
   let draggedShipIndex;
-  // console.log(draggedShip);
 
   //  Drag-N-Drop (for now for p1 only)
-  const getDraggedShipIndex = (e) => {
-    draggedShipIndex = Number(e.target.dataset.index);
-    // console.log(draggedShipIndex);
-  };
+  const getDraggedShipIndex = (e) =>
+    (draggedShipIndex = Number(e.target.dataset.index));
 
   const dragStart = (e) => {
     draggedShip = e.target;
     console.log('start', { draggedShip });
   };
-  const dragOver = (e) => {
-    e.preventDefault();
-    // console.log('Over');
-  };
-  const dragEnter = (e) => {
-    e.preventDefault();
-    // console.log('Enter');
-  };
-  const dragLeave = (e) => {
-    // console.log('Leave');
-  };
   const dragDrop = (e) => {
-    // get cell
     const cell = e.target;
-    // get ship
     const p1Ship = p1.getFleet()[draggedShip.dataset.ship];
-    // get direction
     const isHorizontal = p1Ship.getDirection() === 'horizontal';
     // get/adjust coords according to isHorizontal w/draggedShipIndex
     const y = Number(cell.dataset.y) - (isHorizontal ? 0 : draggedShipIndex);
@@ -41,7 +24,6 @@ const Drag = (p1, p1Board) => {
     // place ship and get outcome
     const outcome = p1Board.placeShip(p1Ship, y, x);
     console.log('DROP', { outcome }, { x }, { y }, p1Ship);
-
     if (outcome) {
       // update grid
       gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
@@ -52,17 +34,19 @@ const Drag = (p1, p1Board) => {
       // todo - enemy autoPlaceFleet
     }
   };
-  const dragEnd = (e) => {
-    // console.log('End');
-  };
+
+  const dragOver = (e) => e.preventDefault();
+  const dragEnter = (e) => e.preventDefault();
+  const dragLeave = () => {};
+  const dragEnd = () => {};
 
   const addDragAndDropEvenListeners = () => {
     const ships = document.querySelectorAll('.ship');
     const cells = elements.p1Grid.childNodes;
 
-    // Add EventListener to know which index is being held when dragging
     // Add EventListners for drag/drop events
     for (const ship of ships) {
+      // EventListener to know which index is being held when dragging
       ship.addEventListener('mousedown', getDraggedShipIndex);
       ship.addEventListener('dragstart', dragStart);
       ship.addEventListener('dragend', dragEnd);
@@ -74,6 +58,7 @@ const Drag = (p1, p1Board) => {
       cell.addEventListener('drop', dragDrop);
     }
   };
+
   return { addDragAndDropEvenListeners };
 };
 
