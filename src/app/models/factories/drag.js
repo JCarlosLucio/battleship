@@ -30,8 +30,8 @@ const Drag = (p1, p1Board) => {
       addDragAndDropEvenListeners();
       // remove ship from fleet container
       elements.fleetContainer.removeChild(draggedShip);
-      // todo - show START button after last ship has been placed
-      // todo - enemy autoPlaceFleet
+      // show START button if all ships are placed
+      if (p1Board.areAllShipsPlaced()) elements.startBtn.classList.add('show');
     }
   };
 
