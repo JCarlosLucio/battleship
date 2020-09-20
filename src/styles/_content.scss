@@ -19,6 +19,9 @@
     width: $cell-size;
   }
 }
+.vertical {
+  flex-direction: column;
+}
 
 .destroyer {
   background-color: rgb(173, 20, 0);
