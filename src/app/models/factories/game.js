@@ -94,7 +94,8 @@ const Game = (type) => {
       // update grid
       gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
       addDragAndDropEvenListeners();
-      // todo - remove ship from fleet container
+      // remove ship from fleet container
+      elements.fleetContainer.removeChild(draggedShip);
       // todo - show START button after last ship has been placed
       // todo - enemy autoPlaceFleet
     }
