@@ -48,6 +48,28 @@ const Game = (type) => {
     cells.forEach((cell) => cell.addEventListener('dragend', dragEnd));
   };
 
+  const dragStart = (e) => {
+    // console.log('Start');
+  };
+  const dragOver = (e) => {
+    e.preventDefault();
+    // console.log('Over');
+  };
+  const dragEnter = (e) => {
+    e.preventDefault();
+    // console.log('Enter');
+  };
+  const dragLeave = (e) => {
+    // console.log('Leave');
+  };
+  const dragDrop = (e) => {
+    // console.log('Drop')
+  };
+  const dragEnd = (e) => {
+    // console.log('End');
+  };
+  // ==== Ends Drag-n-Drop ====
+
   //  EventListener for p1 'human' player
   const addGridEventListeners = () => {
     if (p2.getType === 'human')
