@@ -30,6 +30,12 @@ const gameboardView = (() => {
     }
     parent.insertAdjacentHTML('afterbegin', grid);
   };
+
+  const renderFleet = (fleet) => {
+    // create draggable 'ship'-container
+    // create inner ship divs
+  };
+
   const autoPlace = () => {
     elements.startBtn.classList.add('show');
   };
@@ -54,6 +60,7 @@ const gameboardView = (() => {
 
   return {
     renderGrid,
+    renderFleet,
     autoPlace,
     startGame,
     renderWinner,
