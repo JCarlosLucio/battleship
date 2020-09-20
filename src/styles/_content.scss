@@ -12,6 +12,47 @@
   width: $cell-size;
 }
 
+.destroyer-container {
+  margin: 10px;
+  display: flex;
+  & div {
+    background-color: rgb(173, 20, 0);
+    border: 1px solid rgb(255, 8, 0);
+  }
+}
+.submarine-container {
+  margin: 10px;
+  display: flex;
+  & div {
+    background-color: rgb(196, 152, 11);
+    border: 1px solid rgb(240, 209, 106);
+  }
+}
+.cruiser-container {
+  margin: 10px;
+  display: flex;
+  & div {
+    background-color: rgb(55, 158, 7);
+    border: 1px solid rgb(122, 240, 106);
+  }
+}
+.battleship-container {
+  margin: 10px;
+  display: flex;
+  & div {
+    background-color: rgb(51, 63, 236);
+    border: 1px solid rgb(106, 137, 240);
+  }
+}
+.carrier-container {
+  margin: 10px;
+  display: flex;
+  & div {
+    background-color: rgb(70, 6, 153);
+    border: 1px solid rgb(157, 106, 240);
+  }
+}
+
 .gameboards-container {
   display: flex;
   justify-content: space-around;
