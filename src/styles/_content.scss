@@ -4,7 +4,11 @@
 }
 
 .fleet-container {
-  border: 1px solid green;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 20rem;
 }
 
 .ship {
