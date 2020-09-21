@@ -6,32 +6,34 @@ import { elements } from '../../views/base';
 
 // INIT
 const Game = (type) => {
+  // Create boards
+  const p1Board = Gameboard();
+  const p2Board = Gameboard();
+
   // Create Players
   let p1 = Player('human');
   let p2;
   if (type === 'singleplayer') {
     p2 = Player('computer');
+    p2Board.autoPlaceFleet(p2.getFleet());
   } else {
     p2 = Player('human');
   }
-
-  // Create boards
-  const p1Board = Gameboard();
-  const p2Board = Gameboard();
 
   // Create drag for Drag-N-Drop
   const drag = Drag(p1, p1Board);
 
   // Reset Game
   const resetGame = (type) => {
+    p1Board.reset();
+    p2Board.reset();
     p1 = Player('human');
     if (type === 'singleplayer') {
       p2 = Player('computer');
+      p2Board.autoPlaceFleet(p2.getFleet());
     } else {
       p2 = Player('human');
     }
-    p1Board.reset();
-    p2Board.reset();
   };
 
   const renderFleet = () => {
@@ -88,9 +90,7 @@ const Game = (type) => {
 
   const autoPlace = () => {
     p1Board.reset();
-    p2Board.reset();
     p1Board.autoPlaceFleet(p1.getFleet());
-    p2Board.autoPlaceFleet(p2.getFleet());
     renderGrids();
     gameboardView.autoPlace();
   };
