@@ -34,6 +34,18 @@ const Game = (type) => {
     p2Board.reset();
   };
 
+  const addRotateEventListeners = () => {
+    const ships = document.querySelectorAll('.ship');
+    ships.forEach((ship) => {
+      ship.addEventListener('dblclick', (e) => {
+        const shipElement = e.target.parentElement;
+        const ship = p1.getFleet()[shipElement.dataset.ship];
+        ship.changeDirection();
+        shipElement.classList.toggle('vertical');
+      });
+    });
+  };
+
   const renderFleet = () => {
     gameboardView.renderFleet(p1.getFleet());
     drag.addDragAndDropEvenListeners();
