@@ -49,6 +49,7 @@ const Game = (type) => {
   const renderFleet = () => {
     gameboardView.renderFleet(p1.getFleet());
     drag.addDragAndDropEvenListeners();
+    addRotateEventListeners();
   };
 
   //  EventListener for p1 'human' player
