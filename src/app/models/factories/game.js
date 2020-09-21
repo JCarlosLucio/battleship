@@ -15,7 +15,6 @@ const Game = (type) => {
   let p2;
   if (type === 'singleplayer') {
     p2 = Player('computer');
-    p2Board.autoPlaceFleet(p2.getFleet());
   } else {
     p2 = Player('human');
   }
@@ -25,15 +24,14 @@ const Game = (type) => {
 
   // Reset Game
   const resetGame = (type) => {
-    p1Board.reset();
-    p2Board.reset();
     p1 = Player('human');
     if (type === 'singleplayer') {
       p2 = Player('computer');
-      p2Board.autoPlaceFleet(p2.getFleet());
     } else {
       p2 = Player('human');
     }
+    p1Board.reset();
+    p2Board.reset();
   };
 
   const renderFleet = () => {
@@ -97,6 +95,7 @@ const Game = (type) => {
 
   const startGame = () => {
     addGridEventListeners();
+    if (p2.getType() === 'computer') p2Board.autoPlaceFleet(p2.getFleet());
     gameboardView.startGame();
   };
 
