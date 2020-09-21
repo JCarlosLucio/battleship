@@ -11,7 +11,6 @@ const Drag = (p1, p1Board) => {
 
   const dragStart = (e) => {
     draggedShip = e.target;
-    console.log('start', { draggedShip });
   };
   const dragDrop = (e) => {
     const cell = e.target;
@@ -23,7 +22,6 @@ const Drag = (p1, p1Board) => {
 
     // place ship and get outcome
     const outcome = p1Board.placeShip(p1Ship, y, x);
-    console.log('DROP', { outcome }, { x }, { y }, p1Ship);
     if (outcome) {
       // update grid
       gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
