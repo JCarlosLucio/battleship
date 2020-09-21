@@ -1,7 +1,7 @@
 import { SHIP_TYPES, randCoords, createFleet } from '../helpers/helpers';
 
 const Player = (type = 'human') => {
-  const fleet = createFleet(SHIP_TYPES);
+  let fleet = createFleet(SHIP_TYPES);
 
   const getType = () => type;
   const getFleet = () => fleet;
@@ -21,7 +21,9 @@ const Player = (type = 'human') => {
     }
   };
 
-  return { getType, getFleet, attack, autoAttack };
+  const resetFleet = () => (fleet = createFleet(SHIP_TYPES));
+
+  return { getType, getFleet, attack, autoAttack, resetFleet };
 };
 
 export default Player;
