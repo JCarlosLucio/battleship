@@ -33,3 +33,21 @@ describe('Auto attack', () => {
     expect(actual).toBe(false);
   });
 });
+
+describe('Reset Fleet', () => {
+  test('player fleets  w/ no reset are equal', () => {
+    const fleet1 = player.getFleet();
+    const fleet2 = player.getFleet();
+
+    const actual = fleet1 === fleet2;
+    expect(actual).toBe(true);
+  });
+  test('player fleets after reset are NOT equal', () => {
+    const fleet1 = player.getFleet();
+    player.resetFleet();
+    const fleet2 = player.getFleet();
+
+    const actual = fleet1 === fleet2;
+    expect(actual).toBe(false);
+  });
+});
