@@ -14,6 +14,8 @@
 .ship {
   display: flex;
   width: min-content;
+  height: min-content;
+
   cursor: grab;
   & div {
     height: $cell-size;
