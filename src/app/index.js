@@ -28,5 +28,5 @@ elements.startBtn.addEventListener('click', (e) => {
 // 4. EventListener for Play Again?
 elements.playAgainBtn.addEventListener('click', (e) => {
   console.log('LETS PLAY AGAIN');
-  game.playAgain(gameType);
+  game.playAgain();
 });

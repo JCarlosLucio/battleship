@@ -6,12 +6,8 @@ import { elements } from '../../views/base';
 
 // INIT
 const Game = (type) => {
-  // Create boards
-  const p1Board = Gameboard();
-  const p2Board = Gameboard();
-
   // Create Players
-  let p1 = Player('human');
+  const p1 = Player('human');
   let p2;
   if (type === 'singleplayer') {
     p2 = Player('computer');
@@ -19,20 +15,19 @@ const Game = (type) => {
     p2 = Player('human');
   }
 
+  // Create boards
+  const p1Board = Gameboard();
+  const p2Board = Gameboard();
+
   // Create drag for Drag-N-Drop
-  let drag = Drag(p1, p1Board);
+  const drag = Drag(p1, p1Board);
 
   // Reset Game
-  const resetGame = (type) => {
-    p1 = Player('human');
-    if (type === 'singleplayer') {
-      p2 = Player('computer');
-    } else {
-      p2 = Player('human');
-    }
+  const resetGame = () => {
+    p1.resetFleet();
+    p2.resetFleet();
     p1Board.reset();
     p2Board.reset();
-    drag = Drag(p1, p1Board);
   };
 
   const addRotateEventListeners = () => {
@@ -113,8 +108,8 @@ const Game = (type) => {
     gameboardView.startGame();
   };
 
-  const playAgain = (type) => {
-    resetGame(type);
+  const playAgain = () => {
+    resetGame();
     renderGrids();
     gameboardView.playAgain();
     renderFleet();
