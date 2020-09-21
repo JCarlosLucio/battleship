@@ -104,6 +104,7 @@ const Game = (type) => {
     resetGame(type);
     renderGrids();
     gameboardView.playAgain();
+    renderFleet();
   };
 
   return {
