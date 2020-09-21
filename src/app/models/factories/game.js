@@ -20,7 +20,7 @@ const Game = (type) => {
   }
 
   // Create drag for Drag-N-Drop
-  const drag = Drag(p1, p1Board);
+  let drag = Drag(p1, p1Board);
 
   // Reset Game
   const resetGame = (type) => {
@@ -32,6 +32,7 @@ const Game = (type) => {
     }
     p1Board.reset();
     p2Board.reset();
+    drag = Drag(p1, p1Board);
   };
 
   const addRotateEventListeners = () => {
