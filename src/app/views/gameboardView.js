@@ -50,7 +50,10 @@ const gameboardView = (() => {
 
   const autoPlace = () => {
     elements.startBtn.classList.add('show');
+    const ships = document.querySelectorAll('.ship');
+    ships.forEach((ship) => elements.fleetContainer.removeChild(ship));
   };
+
   const startGame = () => {
     elements.p1Gameboard.classList.toggle('grid-disabled');
     elements.p2Gameboard.classList.toggle('grid-disabled');
