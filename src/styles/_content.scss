@@ -4,10 +4,24 @@
 }
 
 .fleet-container {
+  position: absolute;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: 37rem;
+}
+
+.slide-out {
+  transform: translateX(-17rem);
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.7s ease;
 }
 
 .fleet-draggable {
@@ -62,7 +76,7 @@
 
 .gameboards-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
 }
 .gameboard {
@@ -71,7 +85,7 @@
 .grid-disabled {
   transform: scale(0.8);
   transition: all 1s ease;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .grid {
@@ -169,9 +183,9 @@
 .start {
   position: absolute;
   visibility: hidden;
-  font-size: 2rem;
-  width: 10rem;
-  height: 3.5rem;
+  font-size: 3rem;
+  width: 5em;
+  height: 2em;
   opacity: 0;
   transition: opacity 2s ease;
 }
