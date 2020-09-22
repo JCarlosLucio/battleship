@@ -15,7 +15,7 @@ game.renderFleet();
 
 // 2. EventListener for Auto-Place button or Drag-n-drop
 elements.autoPlaceBtn.addEventListener('click', (e) => {
-  console.log('autoplaced both players fleets');
+  console.log('autoplaced player fleet');
   game.autoPlace();
 });
 
