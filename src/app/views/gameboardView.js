@@ -51,7 +51,7 @@ const gameboardView = (() => {
   const autoPlace = () => {
     elements.startBtn.classList.add('show');
     const ships = document.querySelectorAll('.ship');
-    ships.forEach((ship) => elements.fleetContainer.removeChild(ship));
+    ships.forEach((ship) => ship.parentElement.removeChild(ship));
   };
 
   const startGame = () => {
