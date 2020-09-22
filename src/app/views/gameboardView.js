@@ -44,7 +44,7 @@ const gameboardView = (() => {
         divs += `<div class=${fleet[ship].id} data-index='${i}'></div>`;
       }
       container.insertAdjacentHTML('afterbegin', divs);
-      elements.fleetContainer.prepend(container);
+      elements.fleetDraggable.prepend(container);
     }
   };
 
