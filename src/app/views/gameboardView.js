@@ -50,8 +50,8 @@ const gameboardView = (() => {
 
   const autoPlace = () => {
     elements.startBtn.classList.add('show');
-    const ships = document.querySelectorAll('.ship');
-    ships.forEach((ship) => ship.parentElement.removeChild(ship));
+    // removes all ships from fleetDraggable
+    elements.fleetDraggable.textContent = '';
   };
 
   const startGame = () => {
