@@ -15,8 +15,12 @@
   display: flex;
   width: min-content;
   height: min-content;
-
   cursor: grab;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
   & div {
     height: $cell-size;
     width: $cell-size;
