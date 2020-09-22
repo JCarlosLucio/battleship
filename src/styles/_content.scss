@@ -5,10 +5,19 @@
 
 .fleet-container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fleet-draggable {
+  display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 20rem;
+  justify-content: space-evenly;
+  align-items: space-around;
+  width: $cell-size*5 + 1.5rem;
+  height: $cell-size*9 + 1.5rem;
 }
 
 .ship {
@@ -158,6 +167,7 @@
   height: 5rem;
 }
 .start {
+  position: absolute;
   visibility: hidden;
   font-size: 2rem;
   width: 10rem;
