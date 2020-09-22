@@ -26,8 +26,8 @@ const Drag = (p1, p1Board) => {
       // update grid
       gameboardView.renderGrid(elements.p1Grid, p1Board, p1.getType());
       addDragAndDropEvenListeners();
-      // remove ship from fleet container
-      elements.fleetContainer.removeChild(draggedShip);
+      // remove ship
+      draggedShip.parentElement.removeChild(draggedShip);
       // show START button if all ships are placed
       if (p1Board.areAllShipsPlaced()) elements.startBtn.classList.add('show');
     }
