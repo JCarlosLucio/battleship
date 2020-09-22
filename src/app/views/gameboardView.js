@@ -59,6 +59,8 @@ const gameboardView = (() => {
     elements.p2Gameboard.classList.toggle('grid-disabled');
     elements.startBtn.classList.remove('show');
     elements.autoPlaceBtn.classList.remove('show');
+    elements.fleetContainer.classList.toggle('slide-out');
+    elements.fleetContainer.classList.toggle('slide-in');
   };
 
   const renderWinner = (winner) => {
@@ -71,6 +73,8 @@ const gameboardView = (() => {
     elements.p1Gameboard.classList.toggle('grid-disabled');
     elements.p2Gameboard.classList.toggle('grid-disabled');
     elements.autoPlaceBtn.classList.add('show');
+    elements.fleetContainer.classList.toggle('slide-in');
+    elements.fleetContainer.classList.toggle('slide-out');
   };
 
   return {
