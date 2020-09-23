@@ -11,3 +11,10 @@
     transition: all 0.7s ease;
   }
 }
+
+@mixin show {
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
