@@ -47,9 +47,4 @@ $carrier-color: rgb(70, 6, 153);
 $carrier-border: rgb(157, 106, 240);
 
 // BREAKPOINTS FOR MEDIA QUERIES
-$breakpoints: (
-  'small': (min-width: 576px),
-  'medium': (min-width: 768px),
-  'large': (min-width: 992px),
-  'huge': (min-width: 1200px)
-);
+$breakpoints: ('small': 320px, 'medium': 768px, 'large': 992px, 'huge': 1200px);
