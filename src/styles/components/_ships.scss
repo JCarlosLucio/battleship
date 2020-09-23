@@ -1,0 +1,39 @@
+.ship {
+  display: flex;
+  width: min-content;
+  height: min-content;
+  cursor: grab;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  & div {
+    height: $cell-size;
+    width: $cell-size;
+  }
+}
+.vertical {
+  flex-direction: column;
+}
+
+.destroyer {
+  background-color: $destroyer-color;
+  border: 1px solid $destroyer-border;
+}
+.submarine {
+  background-color: $submarine-color;
+  border: 1px solid $submarine-border;
+}
+.cruiser {
+  background-color: $cruiser-color;
+  border: 1px solid $cruiser-border;
+}
+.battleship {
+  background-color: $battleship-color;
+  border: 1px solid $battleship-border;
+}
+.carrier {
+  background-color: $carrier-color;
+  border: 1px solid $carrier-border;
+}

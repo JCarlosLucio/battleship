@@ -1,0 +1,61 @@
+
+.grid-disabled {
+  transform: scale(0.8);
+  transition: all 1s ease;
+  opacity: 0.7;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
+  background-color: $grid-color;
+  width: $cell-size*10;
+  height: $cell-size*10;
+
+  &-cell {
+    height: $cell-size;
+    width: $cell-size;
+    border: 1px solid $cell-border;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $cell-hover;
+      -webkit-box-shadow: 0px 0px 5px 0px $cell-hover;
+      -moz-box-shadow: 0px 0px 5px 0px $cell-hover;
+      box-shadow: 0px 0px 5px 0px $cell-hover;
+    }
+  }
+}
+
+.hit {
+  background: $hit;
+  clip-path: polygon(
+    49% 0,
+    61% 19%,
+    100% 1%,
+    79% 36%,
+    97% 40%,
+    83% 53%,
+    96% 73%,
+    76% 74%,
+    80% 100%,
+    59% 79%,
+    46% 100%,
+    38% 81%,
+    0 100%,
+    19% 67%,
+    4% 62%,
+    19% 47%,
+    0 31%,
+    26% 30%,
+    13% 1%,
+    41% 21%
+  );
+}
+.miss {
+  background-color: $miss;
+}
+.placed {
+  background-color: $placed;
+}
