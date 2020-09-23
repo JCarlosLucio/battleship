@@ -61,8 +61,9 @@
   -webkit-backdrop-filter: blur(10px);
   opacity: 0;
   transition: opacity 2s ease;
+
   & .show {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
   }
 }
