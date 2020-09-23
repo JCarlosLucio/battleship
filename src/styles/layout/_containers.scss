@@ -11,7 +11,7 @@
   justify-content: space-around;
   align-items: center;
   height: $cell-size*12.5;
-  @include slide-in-out();
+  @include slide-in-out;
 }
 
 .fleet-draggable {
@@ -52,9 +52,5 @@
   -webkit-backdrop-filter: blur(10px);
   opacity: 0;
   transition: opacity 2s ease;
-
-  & .show {
-    visibility: visible;
-    opacity: 1;
-  }
+  @include show;
 }

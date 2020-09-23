@@ -20,6 +20,7 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 2s ease;
+  @include show;
 }
 .play-again {
   font-size: inherit;
@@ -34,9 +35,5 @@
   height: 2em;
   opacity: 0;
   transition: opacity 2s ease;
-}
-
-.show {
-  visibility: visible;
-  opacity: 1;
+  @include show;
 }
