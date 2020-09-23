@@ -9,16 +9,14 @@
   grid-gap: 0;
   grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
   background-color: $grid-color;
-  width: $cell-size*10;
-  height: $cell-size*10;
+  @include size($cell-size*10);
 
   &-title {
     margin: 1rem 0;
   }
 
   &-cell {
-    height: $cell-size;
-    width: $cell-size;
+    @include size($cell-size);
     border: 1px solid $cell-border;
 
     &:hover {
