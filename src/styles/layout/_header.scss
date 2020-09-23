@@ -1,7 +1,27 @@
-
 .title {
-  font-size: 5rem;
+  font-size: 2.2rem;
+  margin: 1.5rem;
   text-align: center;
-  margin: 5rem;
   text-transform: uppercase;
+
+  @include media('small') {
+    font-size: 3rem;
+    margin: 2rem;
+    color: #ffd700;
+  }
+  @include media('medium') {
+    font-size: 5rem;
+    margin: 2rem;
+    color: #ff0000;
+  }
+  @include media('large') {
+    font-size: 5rem;
+    margin: 3rem;
+    color: #00ff40;
+  }
+  @include media('huge') {
+    font-size: 5rem;
+    margin: 4rem;
+    color: #e100ff;
+  }
 }
