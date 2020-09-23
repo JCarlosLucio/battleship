@@ -13,22 +13,24 @@ $text-color: #05feff;
 // GRID VARIABLES
 $cell-size: 3rem;
 
-// BLUE HUD
+// GRID BLUE
 $grid-color: #157691;
 $cell-border: #6cecfd;
 $cell-hover: #6cecfd;
 $cell-color: #00c1fc;
 
-// GREEN HUD
+// GRID GREEN
 // $grid-color: #15362e;
 // $cell-border: #51e7d6;
 // $cell-hover: #51e7d6;
 // $cell-color: #2d9f89;
 
+// GRID EVENTS
 $hit: radial-gradient(circle, #fff400 8%, #ba0505 55%);
 $miss: #0f3366;
 $placed: #2121b3;
 
+// SHIPS
 $destroyer-color: rgb(173, 20, 0);
 $destroyer-border: rgb(255, 8, 0);
 
@@ -43,3 +45,11 @@ $battleship-border: rgb(106, 137, 240);
 
 $carrier-color: rgb(70, 6, 153);
 $carrier-border: rgb(157, 106, 240);
+
+// BREAKPOINTS FOR MEDIA QUERIES
+$breakpoints: (
+  'small': (min-width: 576px),
+  'medium': (min-width: 768px),
+  'large': (min-width: 992px),
+  'huge': (min-width: 1200px)
+);
