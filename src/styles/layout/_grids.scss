@@ -1,4 +1,3 @@
-
 .grid-disabled {
   transform: scale(0.8);
   transition: all 1s ease;
@@ -12,6 +11,10 @@
   background-color: $grid-color;
   width: $cell-size*10;
   height: $cell-size*10;
+
+  &-title {
+    margin: 1rem 0;
+  }
 
   &-cell {
     height: $cell-size;
