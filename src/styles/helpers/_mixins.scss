@@ -1,3 +1,10 @@
+// size
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Enter/Exit
 @mixin slide-in-out {
   &.slide-in {
     transform: translateX(0);
