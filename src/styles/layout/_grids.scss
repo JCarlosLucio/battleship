@@ -25,7 +25,25 @@
   @include responsiveCellSize(10);
 
   &-title {
+    font-size: 1rem;
     margin: 1rem 0;
+
+    @include media('small') {
+      font-size: 1rem;
+      color: #ffd700;
+    }
+    @include media('medium') {
+      font-size: 1.3rem;
+      color: #ff0000;
+    }
+    @include media('large') {
+      font-size: 1.5rem;
+      color: #00ff40;
+    }
+    @include media('huge') {
+      font-size: 1.8rem;
+      color: #e100ff;
+    }
   }
 
   &-cell {
