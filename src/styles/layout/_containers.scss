@@ -49,20 +49,19 @@
   justify-content: space-evenly;
   align-items: space-around;
 
-  // @include size($cell-size*5 + 1.5rem, $cell-size*9 + 1.5rem); /// ===========
-  @include size(cell-size('default')*5 + 1.5rem, cell-size('default')*9 + 1.5rem); /// ===========
+  @include size(cell-size('default')*5.5, cell-size('default')*9.5);
 
   @include media('small') {
-    @include size(cell-size('small')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+    @include size(cell-size('small')*5.5, cell-size('small')*9.5);
   }
   @include media('medium') {
-    @include size(cell-size('medium')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+    @include size(cell-size('medium')*5.5, cell-size('medium')*9.5);
   }
   @include media('large') {
-    @include size(cell-size('large')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+    @include size(cell-size('large')*5.5, cell-size('large')*9.5);
   }
   @include media('huge') {
-    @include size(cell-size('huge')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+    @include size(cell-size('huge')*5.5, cell-size('huge')*9.5);
   }
 }
 
