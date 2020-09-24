@@ -66,7 +66,7 @@
 }
 
 .fleet-draggable {
-  display: flex;
+  display: none;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -75,15 +75,19 @@
   @include size(cell-size('default')*5.5, cell-size('default')*9.5);
 
   @include media('small') {
+    display: none;
     @include size(cell-size('small')*5.5, cell-size('small')*9.5);
   }
   @include media('medium') {
+    display: none;
     @include size(cell-size('medium')*5.5, cell-size('medium')*9.5);
   }
   @include media('large') {
+    display: flex;
     @include size(cell-size('large')*5.5, cell-size('large')*9.5);
   }
   @include media('huge') {
+    display: flex;
     @include size(cell-size('huge')*5.5, cell-size('huge')*9.5);
   }
 }
