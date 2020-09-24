@@ -5,19 +5,32 @@
 }
 
 .grid {
+  background-color: $grid-color;
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
-  background-color: $grid-color;
-  @include size($cell-size*10);
+  grid-template-columns: repeat(auto-fit, minmax(cell-size('default'), 1fr));
+
+  @include media('small') {
+    grid-template-columns: repeat(auto-fit, minmax(cell-size('small'), 1fr));
+  }
+  @include media('medium') {
+    grid-template-columns: repeat(auto-fit, minmax(cell-size('medium'), 1fr));
+  }
+  @include media('large') {
+    grid-template-columns: repeat(auto-fit, minmax(cell-size('large'), 1fr));
+  }
+  @include media('huge') {
+    grid-template-columns: repeat(auto-fit, minmax(cell-size('huge'), 1fr));
+  }
+  @include responsiveCellSize(10);
 
   &-title {
     margin: 1rem 0;
   }
 
   &-cell {
-    @include size($cell-size);
     border: 1px solid $cell-border;
+    @include responsiveCellSize;
 
     &:hover {
       cursor: pointer;
