@@ -33,3 +33,21 @@
     @content;
   }
 }
+
+/** 
+* Mixin for making cell-sizes responsive when width = height and depends on cell-size.
+* @each creates code as below for each size:
+* 
+* @include media('small') {
+*   @include size($cell-small*$mod);
+* }
+*/
+@mixin responsiveCellSize($mod: 1) {
+  @include size(cell-size('default')*$mod);
+
+  @each $key, $value in $breakpoints {
+    @include media($key) {
+      @include size(cell-size($key)*$mod);
+    }
+  }
+}
