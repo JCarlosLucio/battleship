@@ -1,11 +1,31 @@
 .game-container {
+  position: relative;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  border: 1px solid white;
+  @include size(cell-size('default')*22, auto);
+
+  @include media('small') {
+    flex-direction: row;
+    @include size(cell-size('small')*22, auto);
+  }
+  @include media('medium') {
+    flex-direction: row;
+    @include size(cell-size('medium')*22, auto);
+  }
+  @include media('large') {
+    flex-direction: row;
+    @include size(cell-size('large')*22, auto);
+  }
+  @include media('huge') {
+    flex-direction: row;
+    @include size(cell-size('huge')*22, auto);
+  }
 }
 
 .fleet-container {
   position: absolute;
-  left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -13,28 +33,32 @@
   font-size: 1rem;
   @include slide-in-out;
 
-  // @include size(auto, $cell-size*12.5); /// ======
+  right: cell-size('default')*3;
   @include size(auto, cell-size('default')*12.5);
 
   @include media('small') {
+    right: cell-size('small')*3;
     font-size: 1rem;
     color: #ffd700;
     @include size(auto, cell-size('small')*12.5);
   }
   @include media('medium') {
+    right: cell-size('medium')*3;
     font-size: 1.3rem;
     color: #ff0000;
     @include size(auto, cell-size('medium')*12.5);
   }
   @include media('large') {
+    right: cell-size('large')*3;
     font-size: 1.5rem;
     color: #00ff40;
-    @include size(auto, cell-size('large')*12.5);
+    @include size(cell-size('large')*5.5, cell-size('large')*12.5);
   }
   @include media('huge') {
+    right: cell-size('huge')*3;
     font-size: 1.8rem;
     color: #e100ff;
-    @include size(auto, cell-size('huge')*12.5);
+    @include size(cell-size('huge')*5.5, cell-size('huge')*12.5);
   }
 
   & h1 {
