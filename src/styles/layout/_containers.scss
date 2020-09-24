@@ -67,19 +67,24 @@
 
 .gameboards-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   @include size(cell-size('default')*22, auto);
 
   @include media('small') {
+    flex-direction: row;
     @include size(cell-size('small')*22, auto);
   }
   @include media('medium') {
+    flex-direction: row;
     @include size(cell-size('medium')*22, auto);
   }
   @include media('large') {
+    flex-direction: row;
     @include size(cell-size('large')*22, auto);
   }
   @include media('huge') {
+    flex-direction: row;
     @include size(cell-size('huge')*22, auto);
   }
 }
