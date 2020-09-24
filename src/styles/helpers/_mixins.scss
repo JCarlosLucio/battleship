@@ -13,9 +13,22 @@
   }
 
   &.slide-out {
-    transform: translateX(-17rem);
+    transform: translateX(cell-size('default')*8);
     opacity: 0;
     transition: all 0.7s ease;
+
+    @include media('small') {
+      transform: translateX(cell-size('small')*8);
+    }
+    @include media('medium') {
+      transform: translateX(cell-size('medium')*8);
+    }
+    @include media('large') {
+      transform: translateX(cell-size('large')*8);
+    }
+    @include media('huge') {
+      transform: translateX(cell-size('huge')*8);
+    }
   }
 }
 
