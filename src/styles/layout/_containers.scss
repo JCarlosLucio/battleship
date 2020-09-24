@@ -129,7 +129,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
@@ -138,4 +137,19 @@
   transition: opacity 2s ease;
   @include size(100%);
   @include show;
+  text-align: center;
+  font-size: 1.6rem;
+
+  @include media('small') {
+    font-size: 1.8rem;
+  }
+  @include media('medium') {
+    font-size: 2.5rem;
+  }
+  @include media('large') {
+    font-size: 3rem;
+  }
+  @include media('huge') {
+    font-size: 3.5rem;
+  }
 }
