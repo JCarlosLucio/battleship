@@ -57,6 +57,8 @@ const gameboardView = (() => {
   const startGame = () => {
     elements.p1Gameboard.classList.toggle('grid-disabled');
     elements.p2Gameboard.classList.toggle('grid-disabled');
+    elements.p2Gameboard.classList.toggle('hide');
+    elements.p2Gameboard.classList.toggle('show');
     elements.startBtn.classList.remove('show');
     elements.autoPlaceBtn.classList.remove('show');
     elements.fleetContainer.classList.toggle('slide-out');
@@ -72,6 +74,8 @@ const gameboardView = (() => {
     elements.infoContainer.classList.toggle('show');
     elements.p1Gameboard.classList.toggle('grid-disabled');
     elements.p2Gameboard.classList.toggle('grid-disabled');
+    elements.p2Gameboard.classList.toggle('hide');
+    elements.p2Gameboard.classList.toggle('show');
     elements.autoPlaceBtn.classList.add('show');
     elements.fleetContainer.classList.toggle('slide-in');
     elements.fleetContainer.classList.toggle('slide-out');
