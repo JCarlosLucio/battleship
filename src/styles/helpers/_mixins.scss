@@ -32,6 +32,12 @@
   }
 }
 
+@mixin hide {
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 @mixin show {
   &.show {
     visibility: visible;
