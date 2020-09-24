@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  border: 1px solid white;
   @include size(cell-size('default')*22, auto);
 
   @include media('small') {
