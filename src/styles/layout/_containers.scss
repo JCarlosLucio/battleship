@@ -10,8 +10,23 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  @include size(auto, $cell-size*12.5);
   @include slide-in-out;
+
+  // @include size(auto, $cell-size*12.5); /// ======
+  @include size(auto, cell-size('default')*12.5);
+
+  @include media('small') {
+    @include size(auto, cell-size('small')*12.5);
+  }
+  @include media('medium') {
+    @include size(auto, cell-size('medium')*12.5);
+  }
+  @include media('large') {
+    @include size(auto, cell-size('large')*12.5);
+  }
+  @include media('huge') {
+    @include size(auto, cell-size('huge')*12.5);
+  }
 }
 
 .fleet-draggable {
@@ -20,13 +35,41 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: space-around;
-  @include size($cell-size*5 + 1.5rem, $cell-size*9 + 1.5rem);
+
+  // @include size($cell-size*5 + 1.5rem, $cell-size*9 + 1.5rem); /// ===========
+  @include size(cell-size('default')*5 + 1.5rem, cell-size('default')*9 + 1.5rem); /// ===========
+
+  @include media('small') {
+    @include size(cell-size('small')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+  }
+  @include media('medium') {
+    @include size(cell-size('medium')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+  }
+  @include media('large') {
+    @include size(cell-size('large')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+  }
+  @include media('huge') {
+    @include size(cell-size('huge')*5 + 1.5rem, cell-size('default')*9 + 1.5rem);
+  }
 }
 
 .gameboards-container {
   display: flex;
   justify-content: space-evenly;
-  @include size( $cell-size*22, auto);
+  @include size(cell-size('default')*22, auto);
+
+  @include media('small') {
+    @include size(cell-size('small')*22, auto);
+  }
+  @include media('medium') {
+    @include size(cell-size('medium')*22, auto);
+  }
+  @include media('large') {
+    @include size(cell-size('large')*22, auto);
+  }
+  @include media('huge') {
+    @include size(cell-size('huge')*22, auto);
+  }
 }
 .gameboard {
   transition: all 1s ease;
