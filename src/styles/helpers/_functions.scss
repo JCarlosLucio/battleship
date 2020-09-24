@@ -2,3 +2,7 @@
 @function breakpoint($breakpoint-name) {
   @return map-get($breakpoints, $breakpoint-name);
 }
+
+@function cell-size($size) {
+  @return map-get($cell-sizes, $size);
+}
