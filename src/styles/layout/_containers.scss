@@ -115,6 +115,10 @@
 .gameboard {
   transition: all 1s ease;
 }
+.p2-gameboard {
+  @include hide;
+  @include show;
+}
 
 .info-container {
   visibility: hidden;
