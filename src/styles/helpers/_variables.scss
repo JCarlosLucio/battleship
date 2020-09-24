@@ -11,7 +11,13 @@ $text-color: #05feff;
 // $text-color: #51e7d6;
 
 // GRID VARIABLES
-$cell-size: 3rem;
+$cell-sizes: (
+  'default': 1rem,
+  'small': 1rem,
+  'medium': 2rem,
+  'large': 3rem,
+  'huge': 4rem
+);
 
 // GRID BLUE
 $grid-color: #157691;
