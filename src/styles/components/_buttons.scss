@@ -18,8 +18,22 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 2s ease;
-  @include size(10rem, 2rem);
   @include show;
+  @include size(10em, 2em);
+  font-size: 0.7rem;
+
+  @include media('small') {
+    font-size: 0.7rem;
+  }
+  @include media('medium') {
+    font-size: 1rem;
+  }
+  @include media('large') {
+    font-size: 1.2rem;
+  }
+  @include media('huge') {
+    font-size: 1.3rem;
+  }
 }
 .play-again {
   font-size: inherit;
