@@ -40,13 +40,12 @@
   @include size(10em, 2em);
 }
 .start {
-  position: absolute;
   visibility: hidden;
   opacity: 0;
   transition: opacity 2s ease;
   @include show;
   @include size(5em, 2em);
-  font-size: 1.4rem;
+  font-size: 3.5rem;
 
   @include media('small') {
     font-size: 1.4rem;
@@ -55,9 +54,11 @@
     font-size: 2.1rem;
   }
   @include media('large') {
+    position: absolute;
     font-size: 2.7rem;
   }
   @include media('huge') {
+    position: absolute;
     font-size: 3.2rem;
   }
 }
