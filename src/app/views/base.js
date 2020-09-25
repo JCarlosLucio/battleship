@@ -10,4 +10,5 @@ export const elements = {
   startBtn: document.querySelector('.start'),
   fleetContainer: document.querySelector('.fleet-container'),
   fleetDraggable: document.querySelector('.fleet-draggable'),
+  fleetInfo: document.querySelector('.fleet-info'),
 };
