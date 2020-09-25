@@ -27,26 +27,23 @@
   &-title {
     font-size: 1rem;
     margin: 0 0 0.5rem 0;
+    color: text-color('secondary');
 
     @include media('small') {
       margin: 1rem 0;
       font-size: 1rem;
-      color: #ffd700;
     }
     @include media('medium') {
       margin: 1rem 0;
       font-size: 1.3rem;
-      color: #ff0000;
     }
     @include media('large') {
       margin: 1rem 0;
       font-size: 1.5rem;
-      color: #00ff40;
     }
     @include media('huge') {
       margin: 1rem 0;
       font-size: 1.8rem;
-      color: #e100ff;
     }
   }
 
