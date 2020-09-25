@@ -54,18 +54,42 @@
     right: cell-size('large')*3;
     font-size: 1.5rem;
     color: #00ff40;
-    @include size(cell-size('large')*5.5, cell-size('large')*12.5);
+    @include size(cell-size('large')*7, cell-size('large')*13.5);
   }
   @include media('huge') {
     top: 0;
     right: cell-size('huge')*3;
     font-size: 1.8rem;
     color: #e100ff;
-    @include size(cell-size('huge')*5.5, cell-size('huge')*12.5);
+    @include size(cell-size('huge')*7, cell-size('huge')*13.5);
   }
 
   & h1 {
     font-size: inherit;
+  }
+}
+.fleet-info {
+  display: none;
+  font-size: 1rem;
+  color: inherit;
+  text-align: center;
+  @include show;
+  @include hide;
+  transition: opacity 1s ease;
+
+  @include media('small') {
+    display: none;
+  }
+  @include media('medium') {
+    display: none;
+  }
+  @include media('large') {
+    display: inline-block;
+    @include size(cell-size('large')*7, auto);
+  }
+  @include media('huge') {
+    display: inline-block;
+    @include size(cell-size('huge')*7, auto);
   }
 }
 
