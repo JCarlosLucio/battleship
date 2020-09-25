@@ -28,8 +28,12 @@ const Drag = (p1, p1Board) => {
       addDragAndDropEvenListeners();
       // remove ship
       draggedShip.parentElement.removeChild(draggedShip);
-      // show START button if all ships are placed
-      if (p1Board.areAllShipsPlaced()) elements.startBtn.classList.add('show');
+      // show START button/ hide fleet-info if all ships are placed
+      if (p1Board.areAllShipsPlaced()) {
+        elements.startBtn.classList.add('show');
+        elements.fleetInfo.classList.add('hide');
+        elements.fleetInfo.classList.remove('show');
+      }
     }
   };
 
