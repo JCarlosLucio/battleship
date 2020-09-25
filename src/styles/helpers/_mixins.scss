@@ -61,7 +61,7 @@
 *   @include size($cell-small*$mod);
 * }
 */
-@mixin responsiveCellSize($mod: 1) {
+@mixin responsive-cell-size($mod: 1) {
   @include size(cell-size('default')*$mod);
 
   @each $key, $value in $breakpoints {

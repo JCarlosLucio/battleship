@@ -22,7 +22,7 @@
   @include media('huge') {
     grid-template-columns: repeat(auto-fit, minmax(cell-size('huge'), 1fr));
   }
-  @include responsiveCellSize(10);
+  @include responsive-cell-size(10);
 
   &-title {
     font-size: 1rem;
@@ -49,7 +49,7 @@
 
   &-cell {
     border: 1px solid cell-color('border');
-    @include responsiveCellSize;
+    @include responsive-cell-size;
 
     &:hover {
       cursor: pointer;
