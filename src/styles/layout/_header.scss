@@ -5,9 +5,17 @@
   text-transform: uppercase;
   color: text-color('primary');
 
-  & a {
-    color: inherit;
-    font-size: 1.5rem;
+  & a,
+  a:visited {
+    display: inline-block;
+    color: text-color('secondary');
+    font-size: 2rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: text-color('primary');
+      transform: rotate(360deg);
+    }
   }
 
   @include media('small') {
