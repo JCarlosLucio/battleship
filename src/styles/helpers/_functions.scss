@@ -14,3 +14,7 @@
 @function text-color($color) {
   @return map-get($text-colors, $color);
 }
+
+@function grid-border($color) {
+  @return map-get($grid-borders, $color);
+}
