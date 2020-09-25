@@ -1,16 +1,16 @@
 // BACKGROUND
-$bg-color: #000e28;
-$bg-gradient: radial-gradient(circle, #0f3366 16%, #000e28 85%);
+$bg-color: #0b043c;
+$bg-gradient: $bg-color;
 $shadow-size: 0px 0px 5px 0px;
 
 // TEXT
-$text-colors: ('primary': #05feff, 'secondary': #6cecfd);
+$text-colors: ('primary': #ff0000, 'secondary': #ffffff);
 
 // GRID
-$grid-color: #157691;
+$grid-color: #0b043c;
 
 // CELLS
-$cell-colors: ('bg': #00c1fc, 'hover': #6cecfd, 'border': #6cecfd);
+$cell-colors: ('bg': #00c1fc, 'hover': #ff0000, 'border': #ffffff36);
 $cell-sizes: (
   'default': 2rem,
   'small': 1rem,
