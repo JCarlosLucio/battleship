@@ -5,6 +5,7 @@
 }
 
 .grid {
+  box-sizing: content-box;
   background-color: $grid-color;
   display: grid;
   grid-gap: 0;
@@ -52,10 +53,32 @@
     @include responsive-cell-size;
 
     &:hover {
-      cursor: pointer;
-      background-color: cell-color('hover');
-      @include box-shadow($shadow-size, cell-color('hover'));
+      border-radius: 5px;
     }
+  }
+}
+
+.p1-grid {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: grid-border('p1');
+  cursor: none;
+
+  & .grid-cell:hover {
+    cursor: none;
+    background-color: cell-color('bg');
+    @include box-shadow($shadow-size, cell-color('bg'));
+  }
+}
+.p2-grid {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: grid-border('p2');
+
+  & .grid-cell:hover {
+    cursor: crosshair;
+    background-color: cell-color('hover');
+    @include box-shadow($shadow-size, cell-color('hover'));
   }
 }
 
