@@ -29,31 +29,35 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 1rem;
   @include slide-in-out;
 
-  right: cell-size('default')*3;
-  @include size(auto, cell-size('default')*12.5);
+  top: cell-size('default')*13;
+  font-size: 1rem;
+  @include size(auto, cell-size('default')*7);
 
   @include media('small') {
+    top: 0;
     right: cell-size('small')*3;
     font-size: 1rem;
     color: #ffd700;
     @include size(auto, cell-size('small')*12.5);
   }
   @include media('medium') {
+    top: 0;
     right: cell-size('medium')*3;
     font-size: 1.3rem;
     color: #ff0000;
     @include size(auto, cell-size('medium')*12.5);
   }
   @include media('large') {
+    top: 0;
     right: cell-size('large')*3;
     font-size: 1.5rem;
     color: #00ff40;
     @include size(cell-size('large')*5.5, cell-size('large')*12.5);
   }
   @include media('huge') {
+    top: 0;
     right: cell-size('huge')*3;
     font-size: 1.8rem;
     color: #e100ff;
