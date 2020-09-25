@@ -70,3 +70,10 @@
     }
   }
 }
+
+// Box Shadow
+@mixin box-shadow($size, $shadow) {
+  -webkit-box-shadow: $size $shadow;
+  -moz-box-shadow: $size $shadow;
+  box-shadow: $size $shadow;
+}
