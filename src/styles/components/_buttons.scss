@@ -2,13 +2,19 @@
 .play-again,
 .start {
   font-size: 1rem;
-  background-color: $bg-color;
   color: inherit;
-  border: 1px solid cell-color('border');
   text-transform: uppercase;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: grid-border('p2');
+  background-color: $bg-color;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
   &:hover {
     cursor: pointer;
-    @include box-shadow($shadow-size, cell-color('hover'));
+    background-color: #030027;
+    transform: scaleX(1.01);
   }
 }
 
