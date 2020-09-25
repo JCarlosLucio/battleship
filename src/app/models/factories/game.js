@@ -77,9 +77,9 @@ const Game = (type) => {
       if (p1Board.areAllShipsSunk() || p2Board.areAllShipsSunk()) {
         let winner = '';
         if (p1Board.areAllShipsSunk()) {
-          winner = 'Player 2';
+          winner = 'Computer wins!';
         } else if (p2Board.areAllShipsSunk()) {
-          winner = 'Player 1';
+          winner = 'You win!';
         }
         // 6. Disable eventListeners for attacks
         elements.p2Grid.removeEventListener('click', ctrlAttack);
