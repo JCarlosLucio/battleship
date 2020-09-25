@@ -20,7 +20,7 @@
   transition: opacity 2s ease;
   @include show;
   @include size(10em, 2em);
-  font-size: 0.7rem;
+  font-size: 1.5rem;
 
   @include media('small') {
     font-size: 0.7rem;
