@@ -1,16 +1,15 @@
-// GENERAL VARIABLES
-
-// BLUE HUD
+// BACKGROUND
 $bg-color: #000e28;
 $bg-gradient: radial-gradient(circle, #0f3366 16%, #000e28 85%);
-$text-color: #05feff;
 
-// GREEN HUD
-// $bg-color: #102923;
-// $bg-gradient: radial-gradient(circle, #102923 24%, #040404 85%);
-// $text-color: #51e7d6;
+// TEXT
+$text-colors: ('primary': #05feff, 'secondary': #6cecfd);
 
-// GRID VARIABLES
+// GRID
+$grid-color: #157691;
+
+// CELLS
+$cell-colors: ('bg': #00c1fc, 'hover': #6cecfd, 'border': #6cecfd);
 $cell-sizes: (
   'default': 2rem,
   'small': 1rem,
@@ -19,19 +18,7 @@ $cell-sizes: (
   'huge': 3rem
 );
 
-// GRID BLUE
-$grid-color: #157691;
-$cell-border: #6cecfd;
-$cell-hover: #6cecfd;
-$cell-color: #00c1fc;
-
-// GRID GREEN
-// $grid-color: #15362e;
-// $cell-border: #51e7d6;
-// $cell-hover: #51e7d6;
-// $cell-color: #2d9f89;
-
-// GRID EVENTS
+// CELL EVENTS
 $hit: radial-gradient(circle, #fff400 8%, #ba0505 55%);
 $miss: #0f3366;
 $placed: #2121b3;
