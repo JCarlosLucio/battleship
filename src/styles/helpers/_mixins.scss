@@ -18,16 +18,16 @@
     transition: all 0.7s ease;
 
     @include media('small') {
-      transform: translateX(cell-size('small')*8);
+      transform: translateX(-8*cell-size('small'));
     }
     @include media('medium') {
-      transform: translateX(cell-size('medium')*8);
+      transform: translateX(-8*cell-size('medium'));
     }
     @include media('large') {
-      transform: translateX(cell-size('large')*8);
+      transform: translateX(-8*cell-size('large'));
     }
     @include media('huge') {
-      transform: translateX(cell-size('huge')*8);
+      transform: translateX(-8*cell-size('huge'));
     }
   }
 }
