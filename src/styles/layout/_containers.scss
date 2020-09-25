@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  @include size(cell-size('default')*22, auto);
+  @include size(cell-size('default')*10, auto);
 
   @include media('small') {
     flex-direction: row;
