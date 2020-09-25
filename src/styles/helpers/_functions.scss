@@ -6,3 +6,7 @@
 @function cell-size($size) {
   @return map-get($cell-sizes, $size);
 }
+
+@function cell-color($color) {
+  @return map-get($cell-colors, $color);
+}
