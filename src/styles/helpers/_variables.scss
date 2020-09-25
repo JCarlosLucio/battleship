@@ -8,6 +8,10 @@ $text-colors: ('primary': #ff0000, 'secondary': #ffffff);
 
 // GRID
 $grid-color: #0b043c;
+$grid-borders: (
+  'p1':linear-gradient(-45deg, #00c853, #b2ff59),
+  'p2':linear-gradient(-45deg, #ff0000, #fae900)
+);
 
 // CELLS
 $cell-colors: ('bg': #00c1fc, 'hover': #ff0000, 'border': #ffffff36);
