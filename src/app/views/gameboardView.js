@@ -50,6 +50,8 @@ const gameboardView = (() => {
 
   const autoPlace = () => {
     elements.startBtn.classList.add('show');
+    elements.fleetInfo.classList.add('hide');
+    elements.fleetInfo.classList.remove('show');
     // removes all ships from fleetDraggable
     elements.fleetDraggable.textContent = '';
   };
@@ -76,6 +78,8 @@ const gameboardView = (() => {
     elements.p2Gameboard.classList.toggle('grid-disabled');
     elements.p2Gameboard.classList.toggle('hide');
     elements.p2Gameboard.classList.toggle('show');
+    elements.fleetInfo.classList.toggle('hide');
+    elements.fleetInfo.classList.toggle('show');
     elements.autoPlaceBtn.classList.add('show');
     elements.fleetContainer.classList.toggle('slide-in');
     elements.fleetContainer.classList.toggle('slide-out');
