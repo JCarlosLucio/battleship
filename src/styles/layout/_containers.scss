@@ -29,6 +29,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  color: text-color('secondary');
   @include slide-in-out;
 
   top: cell-size('default')*13;
@@ -39,28 +40,24 @@
     top: 0;
     right: cell-size('small')*3;
     font-size: 1rem;
-    color: #ffd700;
     @include size(auto, cell-size('small')*12.5);
   }
   @include media('medium') {
     top: 0;
     right: cell-size('medium')*3;
     font-size: 1.3rem;
-    color: #ff0000;
     @include size(auto, cell-size('medium')*12.5);
   }
   @include media('large') {
     top: 0;
     right: cell-size('large')*3;
     font-size: 1.5rem;
-    color: #00ff40;
     @include size(cell-size('large')*7, cell-size('large')*13.5);
   }
   @include media('huge') {
     top: 0;
     right: cell-size('huge')*3;
     font-size: 1.8rem;
-    color: #e100ff;
     @include size(cell-size('huge')*7, cell-size('huge')*13.5);
   }
 
