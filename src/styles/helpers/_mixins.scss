@@ -9,6 +9,7 @@
   &.slide-in {
     transform: translateX(0);
     opacity: 1;
+    z-index: 0;
     transition: all 0.7s ease;
   }
 
@@ -16,6 +17,7 @@
     transform: translateY(-8*cell-size('default'));
     opacity: 0;
     transition: all 0.7s ease;
+    z-index: -1;
 
     @include media('small') {
       transform: translateX(-8*cell-size('small'));
