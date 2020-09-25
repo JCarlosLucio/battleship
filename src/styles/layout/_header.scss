@@ -4,6 +4,11 @@
   text-align: center;
   text-transform: uppercase;
 
+  & a {
+    color: inherit;
+    font-size: 1.5rem;
+  }
+
   @include media('small') {
     font-size: 3rem;
     margin: 2rem;
