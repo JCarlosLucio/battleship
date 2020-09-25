@@ -10,3 +10,7 @@
 @function cell-color($color) {
   @return map-get($cell-colors, $color);
 }
+
+@function text-color($color) {
+  @return map-get($text-colors, $color);
+}
